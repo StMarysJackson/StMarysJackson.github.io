@@ -1,0 +1,2738 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, user-scalable=0">
+  <meta name="description" content="PDS Formation Online Registration">
+  <meta name="author" content="PDS Developers Team">
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>St. Mary's Family Faith Formation Registration Form</title>
+  <style>
+html, body {
+  background: #C9DECB;
+  font-family: Verdana, Geneva, sans-serif;
+}
+.maindiv {
+  width: 75%;
+  margin: 0px auto;
+  text-align: center;
+  overflow-x: auto;
+}
+.contentdiv {
+  background-color: white;
+}
+.hrbet {
+  width: 95%;
+}
+.hrsub {
+  width: 45%;
+}
+.aspace {
+  height: 10px;
+}
+.headerdiv {
+  background-color: #112D03;
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  padding: 40px 0px 40px 0px;
+}
+.footerdiv {
+  background-color: #112D03;
+  text-align: left;
+  color: white;
+  font-size: 20px;
+  padding: 18px 0px 18px 10px;
+}
+.clspulldownstyle {
+  width: 460px;
+  height: 24px;
+}
+.txareastyle {
+  width: 460px;
+}
+select {
+  word-wrap: break-word;
+}
+table.fotable{
+  border-collapse: collapse;
+  border: 0px solid #cdcdcd;
+  width: 100%;
+}
+.fotable td {
+  border: 0px solid #cdcdcd;
+  padding: 0px 4px 2px 10px;
+  text-align: left;
+}
+@media only screen and (max-width: 768px) {
+  .calendar-box {
+    margin-left: -200px !important;
+    max-width: 220px !important;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .maindiv {
+    width: auto;
+  }
+  table.fotable, .fotable tbody, .fotable td, .fotable tr {
+    display: block;
+  }
+  .clspulldownstyle {
+    width: 240px;
+    height: 24px;
+  }
+  .txareastyle {
+    width: 240px;
+  }
+  .headerdiv {
+    padding: 2px 0px 5px 0px;
+  }
+  .calendar-box {
+  margin-left: -100px !important;
+  }
+  .maindiv {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .maindiv {
+    width: auto;
+  }
+}
+.btnstyle {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 12px;
+  color: black;
+  padding: 5px 10px 5px 10px;
+  margin: 0px 0px 5px 0px;
+  border: solid 1px #CCC;
+  background: #C9DECB;
+  width: 100px;
+  cursor: pointer;
+}
+.btnstyle:hover {
+  background: #112D03;
+  color: #FFF;
+}
+.discHead {
+  font-weight: bold;
+}
+.discTbl {
+  margin: 0 auto;
+  font: 12px/20px Verdana, Geneva, sans-serif;
+  border-collapse: collapse;
+}
+.discTbl td {
+  border: 1px solid gray;
+  text-align: center;
+  padding: 6px;
+} 
+.cblbl {
+  font: 12px/30px Verdana, Geneva, sans-serif;
+}
+label.checkbox-label input[type=checkbox] {
+  position: relative;
+  vertical-align: middle;
+  bottom: 1px;
+}
+.modalmark {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 900;
+  color: #112D03;
+  width: 18px;
+  height: 18px;
+  background: #C9DECB;
+  border: 1px solid white;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  text-align: center;
+  display: inline-block;
+}
+.questionmark, .refreshcaptcha {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 900;
+  color: #112D03;
+  width: 20px;
+  height: 20px;
+  background: #C9DECB;
+  border: 1px solid #112D03;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 1px 3px #111;
+  -moz-box-shadow: 3px 3px 1px #999;
+  -webkit-box-shadow: 3px 3px 1px #999;
+  display: inline-block;
+}
+.questionmark:hover, .refreshcaptcha:hover {
+  background: #112D03;
+  color: #FFF;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltiptext {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 12px;
+  visibility: hidden;
+  width: 120px;
+  background-color: #112D03;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 5px 10px 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -11px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #112D03 transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 5px;
+}
+.modal {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 12px;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2000; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 40%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: zoomIn;
+  -webkit-animation-duration: 0.5s;
+  animation-name: zoomIn;
+  animation-duration: 0.5s;
+  /* border: 5px double #112D03!important; */
+}
+@media only screen and (min-width: 992px) {
+  .modal-content {
+    width: 20%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .modal-content {
+    width: 80%;
+  }
+}
+/* Add Animation */
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.closebtn {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.closebtn:hover, .closebtn:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-header {
+  padding: 2px 16px;
+  background-color: #718272;
+  color: white;
+}
+.modal-body {
+  padding: 2px 16px;
+}
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #718272;
+  color: white;
+}
+.loader {
+  border: 4px solid silver;
+  border-radius: 50%;
+  border-top: 4px solid #112D03;
+  width: 25px;
+  height: 25px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+input[type="button"].btnstyle:enabled {
+  background: #C9DECB;
+}
+input[type=button].btnstyle:disabled {
+  background: #dddddd;
+  color: white;
+}
+input[type="button"].btnstyle:hover:enabled  {
+  background: #112D03;
+  color: #FFF;
+}
+input[type="button"].btnstyle:hover:disabled  {
+}
+.rbtnstyle {
+  width: 16px;
+  height: 16px;
+  vertical-align: bottom;
+  position: relative;
+  top: -8px;
+}
+.chkboxstyle {
+  width: 16px;
+  height: 16px;
+  vertical-align: bottom;
+  position: relative;
+  top: -5px;
+}
+.textboxstyle {
+  height: 18px;
+}
+.pulldownstyle {
+  height: 24px;
+}
+span.reqlbl{
+  margin: 0px;
+  text-align: left;
+  color: #FF0000;
+}
+span.lbl{
+  color: #000000;
+  font: 12px/30px Verdana, Geneva, sans-serif;
+}
+span.lblinstruction{
+  color: #000000;
+  font: 12px/30px Verdana, Geneva, sans-serif;
+  line-height: 18px;
+}
+span.titlelbl{
+  color: #000000;
+  font: normal bold 14px/30px Verdana, Geneva, sans-serif;
+}
+p{
+  text-align: center;
+  left: 50px;
+  right: 50px;
+}
+p.clcopyrt{
+  text-align: left;
+  max-width: 1000px;
+}
+.calendar-box {
+  display:none;
+  background-color:#fff;
+  border:1px solid #444;
+  position:absolute;
+  width: 250px;
+  padding: 0 5px;
+  margin-top: 24px;
+  margin-left: -100px;
+  margin-bottom: 0px;
+  z-index: 1000;
+}
+.calendar-box select.calendar-month {
+  width: 90px;
+}
+.calendar-box select.calendar-year {
+  width: 70px;
+}
+.calendar-box .calendar-cancel {
+  width: 100%;
+}
+.calendar-box table td {
+  width: 14%;
+  font: 12px/20px Verdana, Geneva, sans-serif;
+}
+.calendar-box .calendar-title {
+  text-align:center;
+}
+.calendar-box a {
+  text-decoration:none;
+}
+.calendar-box .today a {
+  padding:0 5px;
+  margin-left:-5px;
+  background-color:#ffe9c6;
+}
+.calendar-box .selected a {
+  padding:0 5px;
+  margin-left:-5px;
+  background-color:#c9ff8b;
+}
+table.fotable tr.spouseInfo {
+  display: none;
+}
+table.fotable.showSpouseInfo tr.spouseInfo {
+  display: table-row;
+}
+table.fotable tr.Emergency1Info {
+  display: none;
+}
+table.fotable.showEmergency1Info tr.Emergency1Info {
+  display: table-row;
+}
+  </style>
+</head>
+<dialog id="whyDialog"; style="background:#C9DECB">
+  <span id="dispReasonLbl">*</span>
+  <input type="button"; align="center"; value="Close"; class="btnstyle"; onclick="CloseFeeReason()";
+              style="border: 1px solid black; position: absolute; top :0; right :0"/>
+</dialog>
+<body>
+    <div id="fo-form-content" style="display: none;">
+    <div id="pModal" class="modal" style="background-color: transparent;">
+      <div class="modal-content" id="" style="background-color: #edf9ee; border: 0px solid #edf9ee;">
+        <div class="modal-body">
+          <p id="pbody">Some text in the pModal Body</p>
+        </div>
+      </div>
+    </div>
+  <div id="totalFeeBox"  style="z-index: 99; position: fixed; top:0; right: 0; width: 300px; background-color: #edf9ee; border: 1px solid gray; visibility: hidden;">
+    <p><span id="famLblTotalFee"> Fee Total  = $0.00</span>
+    <input type="button"; align="center"; value="&#63;"; class="questionmark"; onclick="ShowFeeReason()"; style="top: 0; left 270px; width: 25px;"/>
+    </p>
+  </div>
+    <div id="fullModal" class="modal">
+      <div class="modal-content" id="modal-content">
+        <div class="modal-header" id="modal-header">
+          <span class="closebtn">&times;</span>
+          <h3 id="modheadtitle">Modal Header</h3>
+        </div>
+        <div class="modal-body">
+          <p id="modheadbody">Some text in the Modal Body</p>
+          <p id="modbtn">
+            <input tabindex="" type="button" align="center" value="Yes" id="btnYes" class="btnstyle" style="width: 75px;"/>&nbsp;
+            <input tabindex="" type="button" align="center" value="No" id="btnNo" class="btnstyle" style="width: 75px;"/>
+          </p>
+        </div>
+        <div class="modal-footer" id ="modal-footer">
+          <h3 id="modheadfooter">St. Mary Catholic Church</h3>
+        </div>
+      </div>
+    </div>
+    <div id="maindiv" class="maindiv">
+      <div>
+        <table class="fotable">
+          <tr class="headerdiv">
+            <td colspan=2>
+              <p style="padding: 5px;"><img src="belltower_header_1800x800.jpg" width="100" height="60" style=""></p>
+            </td>
+            <td colspan=3>
+              <p>St. Mary's Family Faith Formation Registration Form</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="contentdiv">
+        <div class="aspace"></div>
+        <div>
+          <div class="lbl">
+            <span class="lbl"><b>Registrations close at 5pm on Friday, August 15th, 2025!</b></span><br>&nbsp;<span class="lbl">If you have any questions or issues, please call the parish office at 731-668-2596.</span><br>
+          </div>
+        <div class="aspace"></div>
+        <div class="aspace"></div>
+          <div class="lbl" id="forxpmsie" style="text-align:center"></div>
+        </div>
+        <div class="aspace"></div>
+        <div class="aspace"></div>
+        <div class="pagecontainer" id="load"></div>
+        <div id="noscriptmsg" style="display: none;">
+          <div class="aspace"></div>
+          <div id="js1" style="display: none;">
+            <span class="titlelbl"><b>*********** This web page works better with JavaScript enabled. ***********</b></span>
+          </div>
+          <div id="js2">
+            To see how to enable JavaScript, please visit <a target="_blank" title='https://www.enable-javascript.com/' href='https://www.enable-javascript.com/'>https://www.enable-javascript.com/</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <form class="mainForm" id="FORegForm" name="FORegForm" action="https://forms.parishdata.com/PDSForms/RegSVC/PDSFormHandler.dll/PostForm" method="post" >
+    <div id="maindiv" class="maindiv">
+      <div class="contentdiv">
+        <div class="aspace"></div>
+        <div class="aspace"></div>
+        <div class="aspace"></div>
+        <div>
+          <span class="reqlbl">*</span><span class="lbl">Required fields</span>
+        </div>
+        <div style="display: block;">
+          <div class="aspace"></div>
+          <table id="mainTable" class="fotable showSpouseInfo showEmergency1Info ">
+            <tbody id="mainTbody">
+              <tr>
+                <td colspan=2>
+                  <span class="titlelbl">Registration Fee</span>
+                </td>
+                <td colspan=3>
+                  <span class="lbl">$50, $80 for families</span>
+                </td>
+              </tr>
+              <tr>
+                <td colspan=2></td>
+                <td colspan=3><hr></td>
+              </tr>
+	     <input type="hidden" name="rbtNewReg" id="rbtEditRegID" value="1" checked/>
+	     <input type="hidden" name="txaFamIDEnv" id="txaFamIDEnv" value=""/>
+            <td colspan=4><span class="titlelbl">Head of Household</span></td>
+              </tr>
+              <tr>
+                <td><span class="lbl">&nbsp;&nbsp;Title</span></td>
+          	     <td>
+          	       <select tabindex="3" name="cboHeadTitle" id="cboHeadTitle" style="" title="Select a title in the pull down list" class="pulldownstyle" >
+          	         <option value=""></option>
+          	         <option value="">None</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Ms.">Ms.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Miss">Miss</option>
+                    <option value="Dr.">Dr.</option>
+                    <option value="Fr.">Fr.</option>
+                    <option value="Sr.">Sr.</option>
+                    <option value="Sra.">Sra.</option>
+          	       </select>
+                </td>
+              </tr>
+              <tr>
+            <td><span class="reqlbl">*</span><span class="lbl">First Name</span></td>
+            <td><input tabindex="4" maxlength="100" style="" title="enter head first name" name="txaHeadFirstName" id="txaHeadFirstName" class="textboxstyle" onblur="CalTotalFee()" value=""/></td>
+            <td><span class="reqlbl">*</span><span class="lbl">Last Name</span></td>
+            <td><input tabindex="5" maxlength="100" style="" title="enter head last name" name="txaHeadLastName" id="txaHeadLastName" class="textboxstyle" value=""/></td>
+              </tr>
+          <tr>
+              </tr>
+          <tr>
+            <td><span class="lbl">&nbsp;&nbsp;Relationship</span></td>
+            <td>
+              <select tabindex="6" name="cboHeadRelationship" id="cboHeadRelationship" style="" title="Select a relationship in the pull down list" class="pulldownstyle" >
+                <option value=""></option>
+		    <option value="Child">Child</option>
+		    <option value="Father">Father</option>
+		    <option value="Mother">Mother</option>
+              </select>
+            </td>
+            <td><span class="lbl">Maiden Name</span></td>
+            <td><input tabindex="7" maxlength="100" style="" title="Please enter maiden name here" name="txaHeadMaidName" id="txaHeadMaidName" class="textboxstyle" value=""/></td>
+              </tr>
+          <tr>
+              </tr>
+          <tr>
+	         <td><span class="reqlbl" id="r0">*</span><span class="lbl">Gender</span></td>
+		 <td>
+		   <select tabindex="8" name="cboHeadGender" id="cboHeadGender" title="select a gender in the pull down list" style="width:80px" class="pulldownstyle" >
+		     <option value=""></option>
+		    <option value="1">Male</option>
+		    <option value="2">Female</option>
+              </select>
+            </td>
+              </tr>
+          <tr>
+              </tr>
+              <tr>
+                <td colspan=5><hr class="hrbet"></td>
+              </tr>
+                <td colspan=4><input type="button" name="btnSpouseBtn" id="btnSpouseBtn" title="Toggle Spouse Section" value="Hide" onclick="toggleSpouse()" style="width:80px" class="btnstyle" />
+                &nbsp;&nbsp;<span class="titlelbl">Spouse</span></td>
+              </tr>
+              <tr class="spouseInfo">
+                <td><span class="lbl">&nbsp;&nbsp;Title</span></td>
+                <td>
+                  <select tabindex="9" name="cboSpouseTitle" id="cboSpouseTitle" style="" title="Select a title in the pull down list" class="pulldownstyle" >
+                    <option value=""></option>
+                    <option value="">None</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Ms.">Ms.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Miss">Miss</option>
+                    <option value="Dr.">Dr.</option>
+                    <option value="Fr.">Fr.</option>
+                    <option value="Sr.">Sr.</option>
+                    <option value="Sra.">Sra.</option>
+                  </select>
+                </td>
+              </tr>
+              <tr class="spouseInfo">
+            <td><span class="lbl">&nbsp;&nbsp;First Name</span></td>
+            <td><input tabindex="10" maxlength="100" style="" title="Please enter first name here" name="txaSpouseFirstName" id="txaSpouseFirstName" class="textboxstyle" value=""/></td>
+            <td><span class="lbl">Last Name</span></td>
+            <td><input tabindex="11" maxlength="100" style="" title="Please enter last name here" name="txaSpouseLastName" id="txaSpouseLastName" class="textboxstyle" value=""/></td>
+              </tr>
+          <tr class="spouseInfo">
+              </tr>
+          <tr class="spouseInfo">
+            <td><span class="lbl">&nbsp;&nbsp;Relationship</span></td>
+            <td>
+              <select tabindex="12" name="cboSpouseRelationship" id="cboSpouseRelationship" style="width: 110px" title="Select a relationship in the pull down list" class="pulldownstyle" >
+                <option value=""></option>
+		    <option value="Child">Child</option>
+		    <option value="Father">Father</option>
+		    <option value="Mother">Mother</option>
+              </select>
+            </td>
+            <td><span class="lbl">Maiden Name</span></td>
+            <td><input tabindex="13" maxlength="100" style="" title="Please enter maiden name here" name="txaSpouseMaidName" id="txaSpouseMaidName" class="textboxstyle" value=""/></td>
+              </tr>
+          <tr class="spouseInfo">
+              </tr>
+          <tr class="spouseInfo">
+            <td colspan=2></td>
+              </tr>
+          <tr class="spouseInfo">
+              </tr>
+              <tr>
+                <td colspan=5><hr class="hrbet"></td>
+              </tr>
+          <tr>
+		 <td colspan=2><span class="titlelbl">Family Street Address</span></td>
+	       </tr>
+	       <tr>
+		 <td><span class="reqlbl">*</span><span class="lbl">Line 1</span></td>
+            <td colspan="3"><input tabindex="14" maxlength="100" style="width: 240px" name="txaStreetAddress" id="txaStreetAddress" class="textboxstyle" value=""/>
+	       </tr>
+	       <tr>
+		 <td><span class="lbl">&nbsp;&nbsp;Line 2</span></td>
+            <td colspan="3"><input tabindex="15" maxlength="100" style="width: 240px" name="txaStreetAddressLine2" id="txaStreetAddressLine2" class="textboxstyle" value=""/>
+	       </tr>
+	       <tr>
+		 <td><span class="reqlbl">*</span><span class="lbl">City</span></td>
+            <td colspan="3"><input tabindex="16" maxlength="100" style="width: 240px" title="enter street city" name="txaStreetCity" id="txaStreetCity" class="textboxstyle" value=""/>
+	       </tr>
+	       <tr>
+		 <td><span class="reqlbl">*</span><span class="lbl">State</span></td>
+                <td colspan="3">
+		   <select tabindex="17" style="width: 208px;" title="select a street state in the pull down list" name="cboStreetState" id="cboStreetState" class="pulldownstyle" value="">
+		     <option></option>
+		       <optgroup label="United States"/>
+		         <option value="AL">Alabama (AL)</option>
+		         <option value="AK">Alaska (AK)</option>
+		         <option value="AS">American Samoa (AS)</option>
+		         <option value="AZ">Arizona (AZ)</option>
+		         <option value="AR">Arkansas (AR)</option>
+		         <option value="CA">California (CA)</option>
+		         <option value="CO">Colorado (CO)</option>
+		         <option value="CT">Connecticut (CT)</option>
+		         <option value="DE">Delaware (DE)</option>
+		         <option value="DC">District of Columbia (DC)</option>
+		         <option value="FM">Federated States of Micronesia (FM)</option>
+		         <option value="FL">Florida (FL)</option>
+		         <option value="GA">Georgia (GA)</option>
+		         <option value="GU">Guam (GU)</option>
+		         <option value="HI">Hawaii (HI)</option>
+		         <option value="ID">Idaho (ID)</option>
+		         <option value="IL">Illinois (IL)</option>
+		         <option value="IN">Indiana (IN)</option>
+		         <option value="IA">Iowa (IA)</option>
+		         <option value="KS">Kansas (KS)</option>
+		         <option value="KY">Kentucky (KY)</option>
+		         <option value="LA">Louisiana (LA)</option>
+		         <option value="ME">Maine (ME)</option>
+		         <option value="MH">Marshall Islands (MH)</option>
+		         <option value="MD">Maryland (MD)</option>
+		         <option value="MA">Massachusetts (MA)</option>
+		         <option value="MI">Michigan (MI)</option>
+		         <option value="MN">Minnesota (MN)</option>
+		         <option value="MS">Mississippi (MS)</option>
+		         <option value="MO">Missouri (MO)</option>
+		         <option value="MT">Montana (MT)</option>
+		         <option value="NE">Nebraska (NE)</option>
+		         <option value="NV">Nevada (NV)</option>
+		         <option value="NH">New Hampshire (NH)</option>
+		         <option value="NJ">New Jersey (NJ)</option>
+		         <option value="NM">New Mexico (NM)</option>
+		         <option value="NY">New York (NY)</option>
+		         <option value="NC">North Carolina (NC)</option>
+		         <option value="ND">North Dakota (ND)</option>
+		         <option value="NP">Northern Mariana Islands (NP)</option>
+		         <option value="OH">Ohio (OH)</option>
+		         <option value="OK">Oklahoma (OK)</option>
+		         <option value="OR">Oregon (OR)</option>
+		         <option value="PW">Palau (PW)</option>
+		         <option value="PA">Pennsylvania (PA)</option>
+		         <option value="PR">Puerto Rico (PR)</option>
+		         <option value="RI">Rhode Island (RI)</option>
+		         <option value="SC">South Carolina (SC)</option>
+		         <option value="SD">South Dakota (SD)</option>
+		         <option value="TN">Tennessee (TN)</option>
+		         <option value="TX">Texas (TX)</option>
+		         <option value="UT">Utah (UT)</option>
+		         <option value="VT">Vermont (VT)</option>
+		         <option value="VI">Virgin Islands (VI)</option>
+		         <option value="VA">Virginia (VA)</option>
+		         <option value="WA">Washington (WA)</option>
+		         <option value="WV">West Virginia (WV)</option>
+		         <option value="WI">Wisconsin (WI)</option>
+		         <option value="WY">Wyoming (WY)</option>
+                  </optgroup>
+     	       <optgroup label="Canada"/>
+		         <option value="AB">Alberta (AB)</option>
+		         <option value="BC">British Columbia (BC)</option>
+		         <option value="MB">Manitoba (MB)</option>
+		         <option value="NB">New Brunswick (NB)</option>
+		         <option value="NL">Newfoundland and Labrador (NL)</option>
+		         <option value="NT">Northwest Territories (NT)</option>
+		         <option value="NS">Nova Scotia (NS)</option>
+		         <option value="NU">Nunavut (NU)</option>
+		         <option value="PE">Prince Edward Island (PE)</option>
+		         <option value="SK">Saskatchewan (SK)</option>
+		         <option value="ON">Ontario (ON)</option>
+		         <option value="QC">Quebec (QC)</option>
+		         <option value="YT">Yukon (YT)</option>
+                  </optgroup>
+                  <optgroup label="Other"/>
+     	         <option value="Other">Other</option>
+		       </optgroup>
+		   </select>
+		 </td>
+	       </tr>
+           <tr>
+		 <td><span class="reqlbl">*</span><span class="lbl">ZIP</span></td>
+            <td colspan="3"><input tabindex="18" maxlength="100" style="width: 90px" title="enter street ZIP" name="txaStreetZIP" id="txaStreetZIP" class="textboxstyle" onblur="CalTotalFee()" value=""/>
+	       </tr>
+              <tr>
+                <td></td>
+                <td colspan=3><hr></td>
+                <td></td>
+              </tr>
+	       <tr>
+		 <td colspan=2><span class="titlelbl">Family Phone Numbers</span></td>
+	       </tr>
+	       <tr>
+		 <td><span class="reqlbl">*</span><span class="lbl">Primary</span></td>
+            <td>
+              <select tabindex="19" title="select a family primary phone type in the pull down list" name="cboAddrPhone1Type" id="cboAddrPhone1Type" style="width: 120px" class="pulldownstyle" >
+		     <option value=""></option>
+		    <option value="Cell/Mobile Phone">Cell/Mobile Phone</option>
+		    <option value="Home Phone">Home Phone</option>
+              </select>
+            </td>
+            <td colspan=2>
+              ( <input tabindex="20" maxlength="3" style="width: 30px" title="enter phone area code" name="txnAddrPhone1Num1" id="txnAddrPhone1Num1" onkeyup="autoTab(this, document.FORegForm.txnAddrPhone1Num2)" class="textboxstyle" value=""/> )
+                <input tabindex="21" maxlength="3" style="width: 30px" title="enter phone prefix" name="txnAddrPhone1Num2" id="txnAddrPhone1Num2" onkeyup="autoTab(this, document.FORegForm.txnAddrPhone1Num3)" class="textboxstyle" value=""/> - 
+                <input tabindex="22" maxlength="4" style="width: 50px" title="enter phone line number" name="txnAddrPhone1Num3" id="txnAddrPhone1Num3" class="textboxstyle" value=""/>
+                <input tabindex="23" type="checkbox" value="UnlPhone1" name="cbxAddrPhone1Unl" id="cbxAddrPhone1Unl" class="chkboxstyle" /><span class="lbl"> Unlisted</span>
+            </td>
+          </tr>
+	       <tr>
+		 <td><span class="lbl">&nbsp;&nbsp;Other</span></td>
+            <td>
+              <select tabindex="24" name="cboAddrPhone2Type" id="cboAddrPhone2Type" style="width: 120px" class="pulldownstyle" >
+		     <option value=""></option>
+		    <option value="Cell/Mobile Phone">Cell/Mobile Phone</option>
+		    <option value="Home Phone">Home Phone</option>
+              </select>
+            </td>
+            <td colspan=2>
+              ( <input tabindex="25" maxlength="3" style="width: 30px" name="txnAddrPhone2Num1" id="txnAddrPhone2Num1" onkeyup="autoTab(this, document.FORegForm.txnAddrPhone2Num2)" class="textboxstyle" /> )
+                <input tabindex="26" maxlength="3" style="width: 30px" name="txnAddrPhone2Num2" id="txnAddrPhone2Num2" onkeyup="autoTab(this, document.FORegForm.txnAddrPhone2Num3)" class="textboxstyle" /> - 
+                <input tabindex="27" maxlength="4" style="width: 50px" name="txnAddrPhone2Num3" id="txnAddrPhone2Num3" class="textboxstyle" />
+                <input tabindex="28" type="checkbox" value="UnlPhone1" name="cbxAddrPhone2Unl" id="cbxAddrPhone2Unl" class="chkboxstyle" /><span class="lbl"> Unlisted</span>
+            </td>
+          </tr>
+	       <tr>
+		 <td colspan=2><span class="titlelbl">Family Email Address</span></td>
+	       </tr>
+          <tr>
+            <td><span class="reqlbl">*</span><span class="lbl">Email</span></td>
+            <td><select tabindex="29" name="cboAddrEmailType" id="cboAddrEmailType" title="Select an email type in the pull down list" style="width: 120px" class="pulldownstyle" >
+	                           <option value=""></option>
+		    <option value="Primary">Primary</option>
+			       	</select>
+			       	</td>
+	         <td colspan=2>
+		                <input tabindex="30" maxlength="100" style="width: 240px" title="enter email address" name="txaAddrEmail" id="txaAddrEmail" class="textboxstyle" value=""/>
+		                <input tabindex="31" type="checkbox" name="cbxAddrEmailUnl" id="cbxAddrEmailUnl" class="chkboxstyle" /><span class="lbl"> Unlisted</span>
+	         </td>
+          </tr>
+          <tr id="trFamTotalFeeLbl" style="display: none;">
+            <td colspan=4><span class="titlelbl" id="famLblTotalFee" style="visibility: hidden;"> Fee Total  = $0.00</td>
+          </tr>
+              <tr>
+                <td colspan=5><hr class="hrbet"></td>
+              </tr>
+              <tr style="visibility: collapse;">
+		     <td colspan=1></td>
+		     <td colspan=3>
+<input tabindex="32" type="radio" title="" name="rbtStudentEnroll" id="rbtStudentEnroll" value="0" class="rbtnstyle" onclick="EnrollClick('')" checked /><span class="lbl" id="enrStudentLbl" > Enroll Student 1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input tabindex="32" type="radio" title="" name="rbtStudentEnroll" id="rbtStudentDoNotEnroll" value="1" class="rbtnstyle" onclick="EnrollClick('')" /><span class="lbl" id="enrStudentDoNotLbl" > Do Not Enroll Student 1</span>
+		     </td>
+              </tr>
+              <tr>
+                <td colspan=2><span class="titlelbl" id="stdn1">Student 1</span></td>
+                <td></td>
+                <td>
+                  <select style="visibility: hidden;" tabindex="34" name="cboStudentType" id="cboStudentType" style="" title="Select a type in the pull down list" class="pulldownstyle" value="">
+                    <option value=""></option>
+                    <option value="0">Head of Household</option>
+                    <option value="1">Spouse</option>
+                    <option value="2">Adult</option>
+                    <option value="3">Young Adult</option>
+                    <option value="4" selected="selected" >Child</option>
+                    <option value="5">Other</option>
+                  </select>
+                </td>
+              </tr>
+              <tr class="Student1Info">
+              </tr>
+              <tr class="Student1Info">
+            <td><span class="reqlbl">*</span><span class="lbl">First Name</span></td>
+            <td><input tabindex="35" maxlength="100" style="" title="enter student first name" name="txaStudentFirstName" id="txaStudentFirstName" class="textboxstyle" onblur="CalTotalFee()" value=""/></td>
+            <td><span class="reqlbl">*</span><span class="lbl">Last Name</span></td>
+            <td><input tabindex="36" maxlength="100" style="" title="enter student last name" name="txaStudentLastName" id="txaStudentLastName" class="textboxstyle" value=""/></td>
+              </tr>
+          <tr class="Student1Info">
+            <td><span class="lbl">&nbsp;&nbsp;Middle Name</span></td>
+            <td><input tabindex="37" maxlength="100" style="" title="Please enter middle name here" name="txaStudentMidName" id="txaStudentMidName" class="textboxstyle" value=""/></td>
+              </tr>
+          <tr class="Student1Info">
+              </tr>
+          <tr class="Student1Info">
+	         <td><span class="reqlbl" id="r0">*</span><span class="lbl">Birth Date</span></td>
+		 <td><input tabindex="38" maxlength="10" style="width: 90px" value="mm/dd/yyyy" title="enter student birth date" name="dteStudentBirthday" id="dteStudentBirthday" onkeydown="onKeyPressed(event, this);" onFocus="this.select()" class="textboxstyle dateInput" onblur="StudentDOBBlur('dteStudentBirthday', '', 1)" onchange="checkDate(this.id)" onkeyup="DoKeyUp(this)" /></td>
+              </tr>
+          <tr class="Student1Info">
+	         <td><span class="reqlbl" id="r0">*</span><span class="lbl">Gender</span></td>
+		 <td>
+		   <select tabindex="39" name="cboStudentGender" id="cboStudentGender" title="select a gender in the pull down list" style="width:80px" class="pulldownstyle" >
+		     <option value=""></option>
+		    <option value="1">Male</option>
+		    <option value="2">Female</option>
+              </select>
+            </td>
+	         <td><span class="reqlbl" id="r0">*</span><span class="lbl">2025-2026 School Grade</span></td>
+		 <td>
+		   <select tabindex="40" name="cboStudentGrade" id="cboStudentGrade" title="select a fall 2025 grade in the pull down list" style="width: 110px" class="pulldownstyle" onchange="StudentGradeChange('cboStudentGrade', '', 1)" onclick="StudentGradeClick('cboStudentGrade', value)">
+		    <option value=""></option>
+			<option value="Pre-K">Pre-K</option>
+			<option value="k">Kn</option>
+		    <option value="1">1</option>
+		    <option value="2">2</option>
+		    <option value="3">3</option>
+		    <option value="4">4</option>
+		    <option value="5">5</option>
+		    <option value="6">6</option>
+		    <option value="7">7</option>
+		    <option value="8">8</option>
+		    <option value="9">9</option>
+			<option value="10">10</option>
+		    <option value="11">11</option>
+		    <option value="12">12</option>
+              </select>
+            </td>
+              </tr>
+          <tr class="Student1Info">
+              </tr>
+          <tr class="StudentInfo" id="StudentClsLbl">
+            <td colspan=2><span class="titlelbl">Class Choices</span></td>
+          </tr>
+		  <tr>
+              <td colspan=8><p style="margin-top: 1px;"><span class="lblinstruction"><b>MARK ALL THAT APPLY.</b><br>Include <b>all</b> sacraments (if any) for which your child needs to be prepared, and <b>every time slot that works</b> for you and your family, in order of priority.</span></p></td>
+          </tr>
+          <tr class="StudentInfo" id="StudentClsReq1">
+            <td><span class="reqlbl">*</span><span class="lbl">Class Priority</span></td>
+            <td colspan=3>
+              <select tabIndex="41" name="cboClassOpt1Student" id="cboClassOpt1Student" style="" title="select a class in the pull down list" class="clspulldownstyle" onclick="GetCurrClassInfo(value, id, 'cboStudentGrade', '')" onchange="CheckClassSize(value, id, '', 'rbtStudentEnroll', '')">
+                <option value="" selected></option>
+              </select>
+            </td>
+          </tr>
+          <tr class="StudentInfo" id="StudentClsReq2">
+            <td>&nbsp;&nbsp;<span class="lbl">Class 2</span></td>
+            <td colspan="3">
+              <select tabIndex="42" name="cboClassOpt2Student" id="cboClassOpt2Student" style="" title="select a class in the pull down list" class="clspulldownstyle" onclick="GetCurrClassInfo(value, id, 'cboClassOpt2Student', '')" onchange="CheckClassSize(value, id, '', 'rbtStudentEnroll', '')">
+                <option value="" selected></option>
+              </select>
+            </td>
+          </tr>
+          <tr class="StudentInfo" id="StudentClsReq3">
+            <td>&nbsp;&nbsp;<span class="lbl">Class 3</span></td>
+            <td colspan="3">
+              <select tabIndex="43" name="cboClassOpt3Student" id="cboClassOpt3Student" style="" title="select a class in the pull down list" class="clspulldownstyle" onclick="GetCurrClassInfo(value, id, 'cboClassOpt3Student', '')" onchange="CheckClassSize(value, id, '', 'rbtStudentEnroll', '')">
+                <option value="" selected></option>
+              </select>
+            </td>
+          </tr>
+          <tr class="StudentInfo" id="StudentClsReq4">
+            <td>&nbsp;&nbsp;<span class="lbl">Class 4</span></td>
+            <td colspan="3">
+              <select tabIndex="44" name="cboClassOpt4Student" id="cboClassOpt4Student" style="" title="select a class in the pull down list" class="clspulldownstyle" onclick="GetCurrClassInfo(value, id, 'cboClassOpt4Student', '')" onchange="CheckClassSize(value, id, '', 'rbtStudentEnroll', '')">
+                <option value="" selected></option>
+              </select>
+            </td>
+          </tr>
+          <tr class="StudentInfo" id="StudentClsReq5">
+            <td>&nbsp;&nbsp;<span class="lbl">Class 5</span></td>
+            <td colspan="3">
+              <select tabIndex="45" name="cboClassOpt5Student" id="cboClassOpt5Student" style="" title="select a class in the pull down list" class="clspulldownstyle" onclick="GetCurrClassInfo(value, id, 'cboClassOpt5Student', '')" onchange="CheckClassSize(value, id, '', 'rbtStudentEnroll', '')">
+                <option value="" selected></option>
+              </select>
+            </td>
+          </tr>
+          <tr class="StudentInfo" id="StudentClsReq6">
+            <td>&nbsp;&nbsp;<span class="lbl">Class 6</span></td>
+            <td colspan="3">
+              <select tabIndex="46" name="cboClassOpt6Student" id="cboClassOpt6Student" style="" title="select a class in the pull down list" class="clspulldownstyle" onclick="GetCurrClassInfo(value, id, 'cboClassOpt6Student', '')" onchange="CheckClassSize(value, id, '', 'rbtStudentEnroll', '')">
+                <option value="" selected></option>
+              </select>
+            </td>
+          </tr>
+          <tr class="StudentInfo" id="StudentClsReq7">
+            <td>&nbsp;&nbsp;<span class="lbl">Class 7</span></td>
+            <td colspan="3">
+              <select tabIndex="47" name="cboClassOpt7Student" id="cboClassOpt7Student" style="" title="select a class in the pull down list" class="clspulldownstyle" onclick="GetCurrClassInfo(value, id, 'cboClassOpt7Student', '')" onchange="CheckClassSize(value, id, '', 'rbtStudentEnroll', '')">
+                <option value="" selected></option>
+              </select>
+            </td>
+          </tr>
+              <tr>
+                <td colspan=5><hr class="hrbet"></td>
+              </tr>
+      <input type="hidden" name="appReq" id="appReq" value="MmIyN2Y3OWYxZGE0OWQ0YWQxZTk4NzMyNzE3ZjE1Y2JmMzkwM2VhMzY2ZTY5YzcyY2YzOWNjMjBiZmIyNWUxODQzZGEzZTVkODRlZjUxODMxMDgwZTc0ODdhMTg2NmZiZTZiOGM5NGQ2ZTRlYjQ5MTEyZDI3NmY1OTI1YzcwMzIxZjRlYWJiM2I3MzA4MTYzMDMxNjk3ZWM5NDkzYTBjNjJlYWNiZjE1MDJiNzBmNWFjNzdhZmUwNDdhM2Q4Yzg5OGNlOWVhMGFhNDhkMDIwZWJkZWE5YTlmODMxNTkyYzY5YWQzN2FlNGRmMWRlMTBiYTIwMzNkNGVmZjIwYjJkYmI2N2Y0NjQyMmQwOGI0ODFkMGY4MzE1ZmI1NzViYjQ5NDQ0MTVhNWE2MDk1NDQxMGU0NTQzYjE4NjZhZTEyMzQ2MGQ2N2Q0MWIzZDQ4MTU1NjJhYmNjYTg2ZTY1YzU3YzJjODM3NWVjOTEwNzNkZjU3ZDE4NTk3NThlNjhhNjJiMTdkMjQ5MzFhMzhiYjA0M2VkNDljMmQxN2EyOGZmMGY5ODA2M2JiMmU5NWZmMTU2NTczMWU3NTYwNzUyZTg3ZTkzNmU2NjNhZTU2OWE5OGMwZDI5NDAyODA2NWFhNDk2MGMzMmYyNzVkMjRjMmYwNjUwYjQ2YjI3ZGUwMDI4YTAwMzFmNjMwOTBkYjIyNDU1NjY1N2ExMGE1NmQzNjhhMTA4OGI5OWFiZDYzOTg5ZTA4ZGNiZjE0NjY2NzU2M2JlMDA0N2U3OTAwZDQwZTU0OTEzZWY4Y2ZkNzZhY2ZhMjA1MzdhOTlmOTQyNGRlYmE2OTg5ZDAzOGU2MGMwZGVmM2I4NTI0MTM3NDQ1NzhhMjc0NjI2N2Y5MWU2NjU3MjcxNTJhYjVmYmE5ZTRkNWYyNTZjYWQ1ZDllMGZiYjVhOWY1YmJiM2ZjNTg3YmYyYWRhYmFlYjgyNmI0NDQwM2VmYWI2ZWMzNDc4OThhMDIyN2M0MzQ2NzMwNDBlZWU2NWY2Y2E0MDhmMTM0ZjQxMjZiZTJmOGFiZTM5ZTc5YTNlNDZjNzkzNzM1ODMyYjc5NTAyYmZkOTJkYTI0ZjIzMGEyMDFlZWMwZGMxMWZmMGQ4YjlhZGRkNzNlNGYyNTA2OWJhZjY2NmU2NTg1MDZhMTQxZDBmMTBiNjY0ZjhiNjdjMTBhMjA0Y2I3YjA2NDMyYzlmYjg4ZjNhNjRhOTkxNzkzYWEwZTBjMzFlZjllNWQ1ZWIzMWU2NTlkNTFkZWMzZjNlMDM4MTBmYjQ1ZmRkZDBlMjljYjNhOWMxZTRkY2JiZDcxMjg4MjY2NmEwZjAxZWIyYTliYWE4ZGQ5NWFlY2VhMzFiYzliNTYxMjBkZTQ2YTMwZDE2NWJhOTNhOWEyOGUxMzNlNWI2ZWIxMmIwYWI0OGQ1OTgzM2ZmYTQ1ZDZiOGE5YmE5NmQyMzIxNzJiZTUzMGZjYjQ3MzJlOWYwYTk0OTJmMDQ3NWVmZWY0OGM5Y2M4YThlOWU2NzIxNDA3NmMxY2ExNzQ1YzJkZWNlNjU4MGQ3MTQ4ZDVmMGE2NjM1ZmRiMjI0NDVhYzRiZmEwYWEwZGY0OGIwNzg0Y2FlOGM1NTNjZmU3NTQ2MDAxMDdjMmFiY2MyYzExYzE3ZDdkODYwNmUwODNmZWE4YzcwZjE4ZjBiNzliZDc3ZjRmODUzZThlZTFhOWFmYTMxNTMxYTZjNDEyMTY2ZTFlMTBjMjllZTdlMjg0ZGJlOGFkNThjNTgzYjc0ZWMxNWRjOWY3NjhlNWVkMGU1NTgwZTMzYmMwOTNkZWY5MDJiM2IwNjcwNjdmOGVkM2E1OGIwNDQ0MWU0OTAwNjM3Zjc3N2IwMmM3ODEwNmQ4MjEyNmY3YzhhY2UwZjBkNjE2OGM1NWI1YjVlYTg5NTYyZWU3NDY2ZmQxMGY1OGFhZDQ1ZGMwYmZjZWU1ZDQyMGU5OGI4MThhYWVjNWU3ZWU1ZDg3YmViYmIxZDA4YWNkNmYwOTU2MzRkYmI3ZmZiYzZhNDZkMGU0OThmMTA4MWY0NTU0OTBhMTY4ZjMzNzc4NmM1Mzc5NzljZjdmNjhjNjQ5MjBlNjliNmVmMTJjZmM0OTgzZTcwNmRkYmYzMGRlNWVjYzU4OTY1NmQwMGEwYjAzYTcyNWJjMWMwZDAwZDQ4ODhmOTAzMDZiYWJmZTRlMmI2YWM1YWI4ODVjNjMzZDhjODAyNzY4MTA0MzUxNzhlNzA5NTc2M2U3NDBkZjE4MTI4ZjYxZGYyYTU1ZjdjOTc4NTRjMjVhNWYxOTlkM2M3ZmYyMmExNzMyNTAwYmZhMDQ1ZGIwYzZmZDFlZjE3ZmE4Zjg4ZGMxNzlmYWVkZWE0OTA1Mjc4NmVkMzcyNDQ3ZTNlMDIyOWQ1ZTViY2NlNWRiNTM0OTMwY2NiNTAyZDEzNjMyNmU4NmExYWQ5YWE4NzMyZWRhNmJjNjk5YjU4YzgxNjBmZDVkZWRhMzRiMWIwN2EzY2E5YzU2NzE3ZDg0MzIzOTYwNzk0ZDFjZmMyMzc0MWI4N2M3MmMyYzNjZTdkMWQzZWZmMGVkMjlhOGQyNWQ0NmIzMmY2NjIzOTE0NTJhM2IyM2Q4YTZhYmQ0NWRhYTk4YjM3NjllNzM5Nzg0MzIxZTY5YjEwNDFiNzEwYjY1NzcwZmY5ODA0" />
+      <input type="hidden" name="VancoResponseValues" id="VancoResponseValues" value="" />
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <input type="button" name="btnAddMember" id="btnAddMember" title="Add another student" value="Add Another Student" onclick="AddNewMem()" style="width:170px" class="btnstyle" />
+          <input type="button" name="btnDelMember" id="btnDelMember" title="Delete student" value="Delete Student" onclick="DelNewMem()" style="width:170px" class="btnstyle" />
+        </div>
+        <div class="aspace"></div>
+        <hr class="hrsub">
+        <div class="lbl"><span class="lbl">Click Submit Form to send this information to St. Mary Catholic Church.<br>You'll be redirected to the site where you can pay online, or you can bring a check or cash to the parish office ($50 per child, or $80 for a family).</span></div>
+        <div class="aspace"></div>
+        <div class="" id="captsection">
+          <img border="0" id="idcaptcha" src="" style="border: 1px solid gray; font-size: 12px; line-height: 30px;" alt="&nbsp;Captcha Not Available&nbsp;">
+          <div class="" style="margin: -28px 0px -10px 200px;">
+            <a title="Click to get different characters" class="refreshcaptcha" onclick="GetNewCaptcha()" id="refreshcaptchabtn">&nbsp;&#8635;&nbsp;</a>
+          </div>
+          <br>
+          <span class="reqlbl">*</span><span class="lbl">Enter the characters shown in the image</span>
+          <br>
+          <input tabindex="600" maxlength="100" style="width: 122px" title="Enter the characters" placeholder="Enter the characters" name="appCaptcha" id="appCaptcha" class="textboxstyle" autocomplete="off">
+        </div>
+        <div class="aspace"></div>
+        <div>
+          <input tabindex="548" type="button" align="center" value="Submit Form" id="btnSubmitButton" name="btnSubmitButton" class="btnstyle" title="Submit Form" onclick="CheckForm()"/>
+          <input tabindex="549" type="reset" align="center" value="Clear Form" name="btnResetButton" class="btnstyle" title="Clear Form" onClick="window.location.reload()" />
+         <br>
+          <br>
+          <a style="cursor: pointer; color: blue; text-decoration: underline; font: 12px/30px Verdana, Geneva, sans-serif;" id="scroll-to-top" onclick="BkToTop()" title="Go to the top of this page">Back to Top</a>
+          <br>
+        </div>
+        <div class="aspace"></div>
+      </div> <!-- contentdiv -->
+    </div> <!-- maindiv -->
+  </form>
+    <div id="maindiv" class="maindiv">
+      <div class="footerdiv">
+        <span id="">St. Mary Catholic Church</span>
+      </div>
+    </div>
+  <script type="text/javascript">
+    var formTabIndex = 50;
+    var memNum = 1, orgMemNum = 1;
+    var emerNum = 0, myWidth = 0, myHeight = 0, df = 0, ds= 0, dow = 0, yr = 0, mo = 0, da = 0;
+    var serverLocked = false, clFull= falsesRsp = "", sRsp = "", currClRec = "", currClId = "", errstr = "", errcaptcha = false;
+    var hasSubmitted = false;
+    var includeCL = true, validateCL = true, clNum = 7;
+    var clArray = [], listCL = [], grList = [], curCboG = "", curCboV = "", grO = "", conf = false, payVC = false, confkeydown = false,
+        calendarActiveInstance = {}, calendarClicked = false,
+        discReason = "", feeReason = "", dispReason;
+    window.onload = function() {
+      BuildTabIndex();
+      if (document.getElementById('downloadInstead') != null)
+        document.getElementById('downloadInstead').style.display = "none";
+      if (document.getElementById('fo-form-content') != null)
+        document.getElementById('fo-form-content').style.display = "";
+      clArray = [], listCL = [], grList = [], errstr = "";
+      var ajaxDiv = document.createElement("div");
+      ajaxDiv.id = "ajax-progressbar";
+      ajaxDiv.innerHTML = "Connecting to server. Please wait...";
+      document.getElementById("FORegForm").appendChild(ajaxDiv);
+      if (document.getElementById('debugtr') != null)
+        document.getElementById('debugtr').style.display = "none";
+      if (document.getElementById('captsection') != null)
+        document.getElementById('captsection').style.display = "none";
+      if (document.getElementById('pModal') != null)
+        document.getElementById('pModal').style.display = "none";
+      if (document.getElementById('fullModal') != null)
+        document.getElementById('fullModal').style.display = "none";
+      if (document.getElementById("ajax-progressbar") != null)
+        document.getElementById("ajax-progressbar").style.display = "none";
+      if (document.getElementById("forxpmsie") != null)
+        document.getElementById("forxpmsie").style.display = "none";
+      if (document.getElementById("noscriptmsg") != null)
+        document.getElementById("noscriptmsg").style.display = "none";
+      if (document.getElementById("load") != null)
+        document.getElementById("load").style.display = "block";
+      calendar.set("dteHeadBirthday");
+      calendar.set("dteSpouseBirthday");
+      calendar.set("dteStudentBirthday");
+      if (document.getElementById('idenv') != null)
+        document.getElementById('idenv').style.display = 'none';
+      if (document.getElementById('txaFamIDEnv') != null)
+        document.getElementById('txaFamIDEnv').style.display = 'none';
+      if (document.getElementById('callChurch') != null)
+        document.getElementById('callChurch').style.display = 'none';
+      if (document.getElementById('rbtNewRegID') != null)
+        document.getElementById('rbtNewRegID').checked = false;
+      if (document.getElementById('rbtEditRegID') != null)
+        document.getElementById('rbtEditRegID').checked = false;
+      document.onclick = documentClick;
+      var currDate = new Date()
+      var dd = ((currDate.getDate())>=10)? (currDate.getDate()) : '0' + (currDate.getDate());
+      var mm = ((currDate.getMonth()+1)>=10)? (currDate.getMonth()+1) : '0' + (currDate.getMonth()+1);
+      var yy = currDate.getFullYear();
+      var currdate = mm+"/"+dd+"/"+yy;
+      document.getElementById('btnDelMember').disabled = true;
+      var nVer = navigator.appVersion;
+      var nAgt = navigator.userAgent.toUpperCase();
+      if (((nAgt.search('WINDOWS NT 5.1')>0) ||
+           (nAgt.search('WINDOWS NT 5.2')>0)) &&
+          ((nAgt.search('TRIDENT/')>0) ||
+           (nAgt.search('MSIE')>0))) {
+        var elem = document.getElementById("FORegForm");
+        elem.parentNode.removeChild(elem);
+        document.getElementById("forxpmsie").style.display = "block";
+        document.getElementById("forxpmsie").innerHTML =
+        "You are using an incompatible browser on a Windows XP computer.<br>To use this registration form, download either <a title='http://www.google.com/chrome/' href='http://www.google.com/chrome/'>Chrome</a> or <a title='https://www.mozilla.org/en-US/firefox/desktop/' href='https://www.mozilla.org/en-US/firefox/desktop/'>Firefox</a> and set it as your default browser.";
+      }
+      serverLocked = false;
+      ajaxCall("CheckLock", "");
+      setTimeout(function() {
+        if (serverLocked) {
+          var s = "The online registration system is currently being updated.\n\nPlease try again later.";
+          var rlt = s.fontcolor("red");
+          var elem = document.getElementById("FORegForm");
+          elem.parentNode.removeChild(elem);
+          document.getElementById("forxpmsie").style.display = "block";
+          document.getElementById("forxpmsie").innerHTML = rlt;
+        }
+        else if (includeCL) {
+          ajaxCall("GetClasses", "");
+        };
+      }, 600);
+    };
+    function showprogress(pbody,disp) {
+      if (disp == true) {
+        document.getElementById("pbody").innerHTML = '<div class="loader""></div><div style="padding-top: 10px;">'+pbody+'</div>';
+        if ($("#pModal").css("display") == "none")
+          $("#pModal").show();
+      }
+      else {
+        $("#pModal").hide();
+      }
+    }
+    function BuildTabIndex() {
+      var tabindex = 1;
+      $("input,select,radio,checkbox,textarea,button").each(function() {
+        if (this.type != "hidden") {
+          var $input = $(this);
+          $input.attr("tabindex", tabindex);
+          tabindex++;
+        }
+      });
+    }
+    function DoKeyUp(ele) {
+        var key = event.keyCode || event.charCode, val = ele.value;
+    	  if ((key === 8) || (key === 9) || (key === 46)) {
+    	      clickOutSide();
+    	       	  return true;
+    	  }
+    	  if (key === 84) {
+    	      var today = new Date(),
+    		  dd = String(today.getDate()).padStart(2, "0"),
+    		  mm = String(today.getMonth() + 1).padStart(2, "0"), //January is 0!
+    		  yyyy = today.getFullYear();
+    	      today = mm + "/" + dd + "/" + yyyy;
+    	      ele.value = today;
+    	      clickOutSide();
+    	      return true;
+    	  }
+    	  else if (ele.value === "mm/dd/yyyy") {
+    	      ele.value = event.key;
+    	      return true;
+    	  }
+    	  else {
+    	      var regex = new RegExp(/[^0-9|\/]/, "g");
+    	      if (regex.test(val)) {
+    		  var txt = val.replace(/[^0-9|\/]/, "");
+    		  ele.value = txt;
+    		  return true;
+    	      }
+    	  }
+    	  if ((val.length === 1) && (val === "/")) {
+    	      ele.value = "01/";
+    	  }
+    	  else if (val.length === 2) {
+    	      if (val.charAt(1) === "/") {
+    		  if (val.charAt(0) === "0") {
+    		      ele.value = "1" + val;
+    		  }
+    		  else {
+    		      ele.value = "0" + val;
+    		  }
+    	      }
+    	      else {
+    	          ele.value = val + "/";
+    	      }
+    	  }
+    	  else if (val.length === 3) {
+    	      if (val.charAt(2) !== "/") {
+    	          ele.value = val.charAt(0) + val.charAt(1) + "/" + val.charAt(2);
+    	      }
+    	  }
+    	  else if (val.length === 4) {
+    	      if (val.charAt(3) === "/") {
+    	          var lv3 = val.length,
+    		      ov3 = val;
+    		  ele.value = ov3.substr(0, lv3-1);
+    	      }
+    	  }
+    	  else if (val.length === 5) {
+    	      if (val.charAt(4) === "/") {
+    	          ele.value = val.charAt(0) + val.charAt(1) + val.charAt(2) + "0" + val.charAt(3) + val.charAt(4);
+    	      }
+    	      else {
+    	          ele.value = val + "/";
+    	      }
+    	  }
+    	  else if (val.length === 6) {
+    	      if (val.charAt(5) !== "/") {
+    	          ele.value = val.charAt(0) + val.charAt(1) + val.charAt(2) + val.charAt(3) + val.charAt(4) + "/" + val.charAt(5);
+    	      }
+    	  }
+    	  else if (val.length >= 7) {
+    	      if (val.charAt(6) === "/") {
+    	          ele.value = val.charAt(0) + val.charAt(1) + val.charAt(2) + val.charAt(3) + val.charAt(4) + val.charAt(5);
+    	      }
+    	      else if (val.charAt(7) === "/") {
+    	          ele.value = val.charAt(0) + val.charAt(1) + val.charAt(2) + val.charAt(3) + val.charAt(4) + val.charAt(5) + val.charAt(6);
+    	      }
+    	      else if (val.charAt(8) === "/") {
+    	          ele.value = val.charAt(0) + val.charAt(1) + val.charAt(2) + val.charAt(3) + val.charAt(4) + val.charAt(5) + val.charAt(6) + val.charAt(7);
+    	      }
+    	      else if (val.charAt(9) === "/") {
+    	          ele.value = val.charAt(0) + val.charAt(1) + val.charAt(2) + val.charAt(3) + val.charAt(4) + val.charAt(5) + val.charAt(6) + val.charAt(7) + val.charAt(8);
+            }
+        }
+    }
+    function GetNewCaptcha() {
+      errcaptcha = false;
+      if ((document.getElementById('captsection') != null) && (payVC == false)) {
+        document.getElementById('captsection').style.display = "block";
+        document.getElementById("appCaptcha").value = "";
+        var x = new Date(), h = x.getHours(), m = x.getMinutes(), s = x.getSeconds();
+        document.getElementById("idcaptcha").src = "https://forms.parishdata.com/PDSForms/CaptchaService/Captcha.gif?" + m + s;
+        $("#idcaptcha").on("load",function(){
+          errcaptcha = false;
+        }).on("error", function() {
+          errcaptcha = true;
+          showmodal("", "Information", "Captcha service is not available.<br><br>Please contact your church.");
+          ScrollTo("lblVCAmount");
+        });
+      }
+    }
+    function showmodal(ele, txthead, txtbody) {
+      confkeydown = false;
+      var modal = document.getElementById("fullModal");
+      document.getElementById("modal-header").style.display = "block";
+      document.getElementById("modheadtitle").innerHTML = '<span class="modalmark">&nbsp;&#161;&nbsp;</span>&nbsp;&nbsp;'+txthead;
+      document.getElementById("modheadbody").innerHTML = '<span style="font-weight: 600;">'+txtbody+'</span>';
+      document.getElementById("modal-footer").style.display = "none";
+      document.getElementById("modbtn").style.display = "none";
+      var by = document.getElementById("btnYes"), bn = document.getElementById("btnNo");
+      if (txthead == "SelectVCAcct") {
+      }
+      else if (txthead == "Confirmation") {
+        confkeydown = true;
+        document.getElementById("btnNo").style.display = "inline";
+        document.getElementById("btnYes").value = "Yes";
+        document.getElementById("btnNo").value = "No";
+        document.getElementById("modal-footer").style.display = "block";
+        document.getElementById("modbtn").style.display = "block";
+        document.getElementById("modheadtitle").innerHTML = '<span class="modalmark">&nbsp;&#63;&nbsp;</span>&nbsp;&nbsp;'+txthead;
+        document.getElementById("modheadbody").innerHTML = '<span style="font-weight: 600;">'+txtbody+'</span>';
+        modal.style.display = "block";
+        by.onclick = function() {
+          conf = true;
+          modal.style.display = "none";
+          document.getElementById("FORegForm").submit();
+        }
+        bn.onclick = function() {
+          modal.style.display = "none";
+          conf = false;
+        }
+      }
+      else if (txthead != "Information") {
+        var btn = document.getElementById(ele);
+        btn.onclick = function() {
+          document.getElementById("modal-footer").style.display = "block";
+          document.getElementById("modheadtitle").innerHTML = '<span class="modalmark">&nbsp;&#161;&nbsp;</span>&nbsp;&nbsp;'+txthead;
+          document.getElementById("modheadbody").innerHTML = '<span style="font-weight: 600;">'+txtbody+'</span>';
+          modal.style.display = "block";
+        }
+        document.getElementById("modbtn").style.display = "block";
+        document.getElementById("btnNo").style.display = "none";
+        document.getElementById("btnYes").value = "OK";
+        by.onclick = function() {
+          modal.style.display = "none";
+          if (document.getElementById(ele) != null)
+            document.getElementById(ele).focus();
+        }
+      }
+      else {
+        modal.style.display = "block";
+        document.getElementById("modbtn").style.display = "block";
+        document.getElementById("btnNo").style.display = "none";
+        document.getElementById("btnYes").value = "OK";
+        by.onclick = function() {
+          modal.style.display = "none";
+          if (document.getElementById(ele) != null)
+            document.getElementById(ele).focus();
+        }
+      }
+      var span = document.getElementsByClassName("closebtn")[0];
+      span.onclick = function() {
+        modal.style.display = "none";
+        if (document.getElementById(ele) != null)
+          document.getElementById(ele).focus();
+      }
+      window.onclick = function(event) {
+        if ((event.target == modal) && (confkeydown == false)) {
+          modal.style.display = "none";
+          if (document.getElementById(ele) != null)
+            document.getElementById(ele).focus();
+        }
+      }
+      window.onkeydown = function(event) {
+        var keyCode = (event.keyCode ? event.keyCode : event.which);
+        if ((modal.style.display == "block") && (keyCode === 13) && (confkeydown == false)) {
+          modal.style.display = "none";
+          if (document.getElementById(ele) != null)
+            document.getElementById(ele).focus();
+        }
+      }
+    }
+    function popupvcwind(url, title, w, h) {
+    }
+    function showID() {
+      if (document.getElementById('idenv') != null)
+        document.getElementById('idenv').style.display = 'inline';
+      if (document.getElementById('txaFamIDEnv') != null)
+        document.getElementById('txaFamIDEnv').style.display = 'inline';
+      if (document.getElementById('callChurch') != null)
+        document.getElementById('callChurch').style.display = 'table-row';
+    }
+    function hideID() {
+      if (document.getElementById('idenv') != null)
+        document.getElementById('idenv').style.display = 'none';
+      if (document.getElementById('txaFamIDEnv') != null)
+        document.getElementById('txaFamIDEnv').style.display = 'none';
+      if (document.getElementById('callChurch') != null)
+        document.getElementById('callChurch').style.display = 'none';
+    }
+    function BkToTop() {
+      $("html, body").animate({scrollTop: 0}, 1000);
+    }
+    function ScrollTo(ele) {
+      var top = $("#" + ele).offset().top;
+      $("html, body").animate({ scrollTop: top }, 1000);
+    }
+    function MyStrCmp(x, y) {
+      x = x.toString(), x = x.trim(), y = y.toString(), y = y.trim();
+      for (var i=0, n=Math.max(x.length, y.length); i<n && x.charAt(i) === y.charAt(i); ++i);
+      if (i === n)
+        return 0
+      else
+        return x.charAt(i) > y.charAt(i) ? -1 : 1;
+    }
+    function PostToVC() {
+      errstr = "";
+      if (errstr != "") {
+        showmodal("", "Information", errstr);
+        return false;
+      }
+      var s = '<span style="color: blue; font-weight: bold;">Sending payment to Vanco. Please wait...</span>';
+      showprogress(s,true);
+      setTimeout(function() {
+        if ((!IsBlank(vccred)) && (!IsBlank(vcfamid)) && (vctrans.length > 0) && (!IsBlank(vcan)) && (!IsBlank(vcpm))) {
+          if (postsvc.length>0) {
+            for (var i = 0, L = (postsvc.length - 1); i <= L; i++) {
+              amt = postsvc[i].famt;
+              if (amt <= 0) {
+                numvcPosted++;
+              }
+            } //for
+            hasSubmitted=false;
+            for (var i = 0, L = (postsvc.length - 1); i <= L; i++) {
+              fnm = postsvc[i].fact;
+              amt = postsvc[i].famt;
+              if ((amt > 0) && (errstr == "")) {
+                ajaxCall("PostToVC", "");
+              }
+              else if ((i==postsvc.length-1) && (hasSubmitted==false) && (errstr=="")) {
+                showprogress("",false); 
+                document.getElementById("FORegForm").submit();
+              }
+            } //for
+          }
+        }
+      }, 10);
+    }
+    function ajaxCall(cmd, cls) {
+      if (IsBlank(cmd)) {
+        return false;
+      }
+      var prgstr = "Connecting to server. Please wait...";
+      var sURL = "https://forms.parishdata.com/PDSRESTFormation/v1/Form/Lock/8333";
+      var ajaxType = "GET";
+      var ajaxData = "";
+      if (cmd == "CheckLock") {
+        ajaxType = "GET";
+        ajaxData = "";
+        sURL = "https://forms.parishdata.com/PDSRESTFormation/v1/Form/Lock/8333";
+        prgstr = "Connecting to server. Please wait...";
+      }
+      else if (cmd == "GetClasses") {
+        ajaxType = "GET";
+        ajaxData = "";
+        sURL = "https://forms.parishdata.com/PDSRESTFormation/v1/PDSClass/ClassInfo";
+        prgstr = "Retrieving class list. Please wait...";
+      }
+      else if (cmd == "CheckClassZ") {
+        ajaxType = "POST";
+        ajaxData = "Classes=Class~|~"+cls+"~|~";
+        sURL = "https://forms.parishdata.com/PDSRESTFormation/v1/PDSClass/RegistrationCount";
+      }
+      var siteInfo = "U2l0ZU51bWJlcj0zMTMzNjUNCkZvcm1hdGlvbk9mZmljZT10cnVl";
+      showprogress(prgstr,true);
+        setTimeout(function() {
+          $.support.cors = true;
+          $.ajax({
+            beforeSend: function(xhrObj) {
+            showprogress(prgstr,true);
+              if ((cmd == "GetVCiFrame") || (cmd == "GetVCPayMeth"))
+                xhrObj.setRequestHeader("SiteInfo", siteInfoVC)
+              else
+                xhrObj.setRequestHeader("SiteInfo", siteInfo);
+            },
+            type: ajaxType,
+            async: false,
+            url: sURL, //url: sURL+"?Debug=1",
+            crossDomain: true,
+            contentType: "text/plain",
+            dataType: "text",
+            data: ajaxData,
+            success: function (resp, status, xhr) {
+              sRsp = resp, errstr = "";
+              document.getElementById("noscriptmsg").style.display = "none";
+              if (sRsp == "True") {
+                serverLocked = true;
+              };
+              setTimeout(function() {
+                showprogress("",false);
+              }, 600);
+            },
+            error: function (request, exception, error) {
+              if ((cmd == "GetClasses") && (sRsp == "False") && (request.status == 401)) {
+                validateCL = false;
+              }
+              else if ((cmd == "GetVCiFrame") || (cmd == "GetVCPayMeth")) {
+                var reqtmsg = "Error!", postmsg = '<span style="color: red;">Could not communicate with Vanco. Please try it again.</span>';
+                postmsg = postmsg + '<br><br>' + '<span style="color: red;">['+request.status+']<br>'+request.responseText+'</span>';
+                showmodal("", "Information", postmsg+"<br>"+error);
+              }
+              else {
+                sRsp = "Error";
+                if (request.status === 0) {
+                  errstr = "Not connect. Verify Network.<br>"+error;
+                  showmodal("", "Information", errstr);
+                }
+                else if (request.status == 400) {
+                  var tmp = request.responseText;
+                  if (tmp.search("Site is Locked")>0) {
+                    serverLocked = true;
+                  }
+                  else {
+                    errstr = request.responseText;
+                    showmodal("", "Information", errstr+"<br>"+error);
+                  }
+                }
+                else if (request.status == 401) {
+                  errstr = "Unauthorized.";
+                  showmodal("", "Information", errstr+"<br>"+error);
+                }
+                else if (request.status == 404) {
+                  errstr = "Requested page not found. [404]";
+                  showmodal("", "Information", errstr+"<br>"+error);
+                }
+                else if (request.status == 500) {
+                  errstr = error;
+                  showmodal("", "Information", errstr+"<br>"+error);
+                }
+                else if (exception === "timeout") {
+                  errstr = "Your time is up. Please try again.";
+                  showmodal("", "Information", errstr);
+                }
+                else {
+                  errstr = "Unhandled Error.<br>" + request.responseText;
+                  showmodal("", "Information", errstr+"<br>"+error);
+                }
+              }
+              document.getElementById("noscriptmsg").style.display = "block";
+              document.getElementById("noscriptmsg").innerHTML = '<span class="reqlbl"><b>***********<br>'+errstr+'<br>***********</b></span><br><span class="reqlbl"><b>Please contact your church.</b>';
+              setTimeout(function() {
+                showprogress("",false);
+              }, 600);
+            },
+            complete: function () {
+              if (cmd == "GetVCPayMeth") {
+                var fd = true,
+                    fnm = document.getElementById("txaHeadFirstName").value+" "+document.getElementById("txaHeadLastName").value;
+                if (vctrans.length > 1) {
+                  for (var i = 0, L = vctrans.length; i < L; i++) {
+                    var vnm = vctrans[i].hnm, aType = "";
+                    if (!IsBlank(vctrans[i].rn))
+                      aType = "Debit"
+                    else if (!IsBlank(vctrans[i].at))
+                      aType = "CreditCard";
+                    if (IsBlank(aType)) {
+                      fd = false;
+                      break;
+                    }
+                  } //for
+                  if (fd == true) {
+                    showmodal("", "SelectVCAcct", "Vanco Accounts")
+                  }
+                  else {
+                    conf = false;
+                    showmodal("vcbtn", "Information", "Please enter payment information");
+                    document.getElementById("vcbtn").focus();
+                  }
+                }
+                else if ((vctrans.length > 0) && (!IsBlank(vctrans[0].an)) && (!IsBlank(vctrans[0].pm))) {
+                  var vnm = vctrans[0].hnm, aType = "";
+                  if (!IsBlank(vctrans[0].rn))
+                    aType = "Debit"
+                  else if (!IsBlank(vctrans[0].at))
+                    aType = "CreditCard";
+                  if (IsBlank(aType))
+                    fd = false;
+                  if (fd == true) {
+                    vcan = vctrans[0].an, vcpm = vctrans[0].pm;
+                    PostToVC();
+                  }
+                  else {
+                    conf = false;
+                    showmodal("vcbtn", "Information", "Please enter payment information");
+                    document.getElementById("vcbtn").focus();
+                  }
+                }
+                else {
+                  conf = false;
+                  showmodal("vcbtn", "Information", "Please enter payment information");
+                  document.getElementById("vcbtn").focus();
+                }
+              }
+            }
+          })
+          .done(function() {
+            if ((includeCL) && (cmd == "GetClasses") &&(sRsp != "")) {
+              listCL = [];
+              var respList = sRsp, lenList = respList.length;
+              var sp, ep, tmp, tmp1, clRec, clInfo;
+              clRec = "", clInfo = "";
+              while ((respList != "") && (respList.indexOf("Class~|~")>0)) {
+                if (respList.indexOf("Class~|~")>0)
+                  sp = respList.indexOf("Class~|~")+8
+                else sp = 0;
+                respList = respList.substr(sp, lenList);
+                ep = respList.indexOf("Class~|~");
+                if (ep < 0)
+                  tmp = respList
+                else tmp = respList.substr(0, ep);
+                if (tmp != "") {
+                  clRec = "", clInfo = "";
+                  var lenList1 = tmp.length;
+                  while ((tmp != "") && (tmp != "No Class Info Available~|~")) {
+                    sp = tmp.indexOf("~|~")+3;
+                    ep = tmp.indexOf("~|~");
+                    tmp1 = tmp.substr(0, ep);
+                    if (tmp1 != "") {
+                      if (IsBlank(clRec))
+                        clRec = tmp1
+                      else if (IsBlank(clInfo))
+                        clInfo = tmp1;
+                      tmp = tmp.substr(sp, lenList1);
+                    }
+                  } //while
+                  if ((!IsBlank(clRec)) && (!IsBlank(clInfo))) {
+                    var clObj = {
+                      clR : "",
+                      clE : ""
+                    };
+                    clObj.clR = clRec;
+                    clObj.clE = clInfo;
+                    listCL.push(clObj);
+                  }
+                  if (tmp == "No Class Info Available~|~")
+                    respList = "";
+                }
+              }; //while
+              for (var k=0; k<memNum; k++) {
+                for (var i=0; i<clNum; i++) {
+                  if (k==0) {
+                    var cbo = document.getElementById("cboClassOpt"+(i+1)+"Student");
+                  }
+                  else {
+                    var cbo = document.getElementById("cboClassOpt"+(i+1)+"Student"+(k+1));
+                  }
+                  if (cbo != null) {
+                    for (var j=0; j<listCL.length; j++) {
+                      if (listCL[j] != null) {
+                        var elOptNew = document.createElement("option");
+                        elOptNew.text = listCL[j].clE;
+                        elOptNew.value = listCL[j].clR;
+                        cbo.add(elOptNew);
+                      };
+                    }; //for
+                  };
+                }; //for
+              }; //for
+            }
+          });
+        }, 10);
+    }
+    function elementExists(arr, cboCL) {
+      for (var i = grList.length; i--;) {
+        if ((grList[i] != null) && 
+            (grList[i].cboG == cboCL.cboG) && 
+            (grList[i].grFor == cboCL.grFor) && 
+            (grList[i].grN == cboCL.grN) && 
+            (grList[i].grO == cboCL.grO)) {
+          return true;
+        }
+      } //for
+      return false;
+    }
+    function StudentDOBBlur(cboG, cboC, mn) {
+    }
+    function StudentGradeClick(cboG, cboV) {
+    }
+    function StudentGradeChange(cboG, cboC, mn) {
+    }
+    function StudentClassClick(cboG, cboV) {
+    }
+    function StudentClassChange(cboG, cboC, mn) {
+    }
+
+    function CheckFee(cboG, mn) {
+    }  // checkFee
+
+    function DiscountClick(elmid, val, dord) {
+      discReason = "";
+      totalDisc = 0;
+      if (SkipDiscountClick == true) {
+        return;
+      }
+    } // DiscountClick
+
+    function CalStudentNum(cmd) {
+      vcsnum = 0;
+      var sn = "", enrO = "";
+      for (var i=1; i<=memNum; i++) {
+        sn = "";
+        if (i == 1)
+          enrO = "rbtStudentEnroll"
+        else
+          enrO = "rbtStudent"+i+"Enroll";
+        if ((document.getElementById(enrO) != null) && (document.getElementById(enrO).checked)) {
+          if (i == 1)
+            sn = document.getElementById("txaStudentFirstName").value
+          else
+            sn = document.getElementById("txaStudent"+i+"FirstName").value;
+          if (!IsBlank(sn))
+            vcsnum++;
+          }
+      } //for
+    }
+    function UpdateVCLabels(frm) {
+      if (totalFee > 0)
+        if (document.getElementById("famLblTotalFee") != null) {
+          document.getElementById("totalFeeBox").style.visibility = "visible";
+          document.getElementById("famLblTotalFee").innerHTML = " Fee Total = $"+(totalFee+totalDisc).toFixed(2);
+        }
+    }
+    function GetCurrClassInfo(clRec, clId, cboG, mn) {
+      currClRec = clRec;
+      currClId = clId;
+    }
+    function CalClassAmt(clRec, clId, cmd, cboG, mn) {
+      for (var i = clArray.length; i--;) {
+        if ((clArray[i] != null) && (clArray[i].clR == currClRec) && (clArray[i].clE == currClId)) {
+          clArray.splice(i, 1);
+        }
+      } //for
+    }
+    function CheckClassSize(clRec, clId, cmd, cboG, mn) {
+      if ((cmd != null) && (IsBlank(cmd))) {
+        serverLocked = false;
+        ajaxCall("CheckLock", "");
+      };
+      setTimeout(function() {
+        if (serverLocked) {
+          var s = "The online registration system is currently being updated.<br><br>Please try again later.";
+          showmodal(clId, "Information", s);
+          document.getElementById(clId).value = "";
+        }
+        else if (document.getElementById(clId).value != "") {
+          sRsp = "";
+          ajaxCall("CheckClassZ", clRec);
+          setTimeout(function() {
+            if ((sRsp != "") && (sRsp.search("~|~")>0)) {
+              var respList = sRsp;
+              var lenList = respList.length;
+              var sp, ep, tmp, clRec, clCap, clLoc, clRem, clReg;
+              clRec = "", clCap = "", clLoc = "", clRem = "", clReg = "";
+              while (respList != "") {
+               sp = respList.indexOf("~|~")+3;
+                respList = respList.substr(sp, lenList);
+                ep = respList.indexOf("~|~");
+               tmp = respList.substr(0, ep);
+                if (tmp != "") {
+                  if (IsBlank(clRec))
+                    clRec = tmp
+                  else if (IsBlank(clCap))
+                    clCap = tmp
+                  else if (IsBlank(clLoc))
+                    clLoc = tmp
+                  else if (IsBlank(clRem))
+                    clRem = tmp
+                  else if (IsBlank(clReg))
+                    clReg = tmp;
+                }
+              } //while
+              var cnt = 0;
+              if (Number(clReg) > 0)
+                cnt = Number(clReg);
+              if (clRec != "") {
+                for (var i=clArray.length-1; i>=0; i--) {
+                  if ((clArray[i] != null) && (clArray[i].clR == clRec))
+                    cnt = cnt + 1;
+                }; //for
+              }
+              var nc = 0, ordn = 0, len = clArray.length;
+              for (var i = clArray.length; i--;) {
+                if ((clArray[i] != null) && (clArray[i].clR == currClRec) && (clArray[i].clE == currClId)) {
+                  clArray.splice(i, 1);
+                }
+              } //for
+              if ((clReg != "") && (clCap != "") && (Number(clCap) > 0) && (((cmd != "No need to check lock") && (cnt >= Number(clCap))) || ((cmd == "No need to check lock") &&(cnt > Number(clCap))))) {
+                var e = document.getElementById(clId);
+                var s = e.options[e.selectedIndex].text;
+                s = s.substr(10, s.length);
+                showmodal(clId, "Information", s+"<br><br>This class is full. Please select another class.");
+                document.getElementById(clId).value = "";
+                document.getElementById(clId).focus();
+                clFull = true;
+                CalClassAmt(clRec, clId, cmd, cboG, mn);
+              }
+              else {
+                if ((clRec != "") && (clCap != "")) {
+                  if ((IsBlank(cmd)) || (cmd == null)) {
+                    var clObj = {
+                      clR : "",
+                      clE : ""
+                    };
+                    clObj.clR = clRec;
+                    clObj.clE = clId;
+                    if (!clArray.hasOwnProperty(clId))
+                      clArray.push(clObj);
+                  }
+                }
+              }
+            }
+            else if ((sRsp != "") && (sRsp == "Classes: 0")) {
+              var e = document.getElementById(clId);
+              var s = e.options[e.selectedIndex].text;
+              s = s.substr(10, s.length);
+              showmodal(clId, "Information", s+"<br><br>This class is no longer available. Please select another class.");
+              document.getElementById(clId).value = "";
+              document.getElementById(clId).focus();
+              clFull = true;
+              CalClassAmt(clRec, clId, cmd, cboG, mn);
+            }
+          }, 600);
+        }
+        else CalClassAmt(clRec, clId, cmd, cboG, mn);
+      }, 600);
+    }
+    function DelNewMem() {
+      try {
+        if (memNum>orgMemNum) {
+          var table = document.getElementById("mainTable");
+          var mainTableBody = document.getElementById("mainTbody");
+          var tr1 = document.getElementById('tr1'+memNum);
+          mainTableBody.removeChild(tr1);
+          var tr2 = document.getElementById('tr2'+memNum);
+          mainTableBody.removeChild(tr2);
+          var tr3 = document.getElementById('tr3'+memNum);
+          mainTableBody.removeChild(tr3);
+          var tr4 = document.getElementById('tr4'+memNum);
+          mainTableBody.removeChild(tr4);
+          var tr5 = document.getElementById('tr5'+memNum);
+          mainTableBody.removeChild(tr5);
+          var tr6 = document.getElementById('tr6'+memNum);
+          mainTableBody.removeChild(tr6);
+          var tr7 = document.getElementById('tr7'+memNum);
+          mainTableBody.removeChild(tr7);
+          var tr8 = document.getElementById('tr8'+memNum);
+          mainTableBody.removeChild(tr8);
+          var tr9 = document.getElementById('tr9'+memNum);
+          mainTableBody.removeChild(tr9);
+          var tr10 = document.getElementById('Student'+memNum+'ClsLbl');
+          mainTableBody.removeChild(tr10);
+          var tr11 = document.getElementById('Student'+memNum+'ClsReq1');
+          mainTableBody.removeChild(tr11);
+          var tr12 = document.getElementById('Student'+memNum+'ClsReq2');
+          mainTableBody.removeChild(tr12);
+          var tr13 = document.getElementById('Student'+memNum+'ClsReq3');
+          mainTableBody.removeChild(tr13);
+          var tr14 = document.getElementById('Student'+memNum+'ClsReq4');
+          mainTableBody.removeChild(tr14);
+          var tr15 = document.getElementById('Student'+memNum+'ClsReq5');
+          mainTableBody.removeChild(tr15);
+          var tr16 = document.getElementById('Student'+memNum+'ClsReq6');
+          mainTableBody.removeChild(tr16);
+          var tr17 = document.getElementById('Student'+memNum+'ClsReq7');
+          mainTableBody.removeChild(tr17);
+          var tr9999 = document.getElementById('tr9999'+memNum);
+          var td9999 = document.getElementById('td9999'+memNum);
+          tr9999.removeChild(td9999);
+          mainTableBody.removeChild(tr9999);
+          document.getElementById('btnDelMember').disabled = false;
+          memNum = memNum-1;
+          if (memNum <= orgMemNum) {
+            memNum = orgMemNum;
+            document.getElementById('btnDelMember').disabled = true;
+          }
+        }
+      }
+      catch(e) {
+        showmodal("", "Information", e);
+      }
+    }
+    function countOcurrences(str, value) {
+      var r1 = new RegExp(value, "gi");
+      return (str.match(r1) || []).length;
+    }
+    function GetHeading(ah, num, wht, lbl) {
+      if (!IsBlank(lbl))
+        var hd = lbl, lastChr = hd.substr(hd.length-1)
+      else
+        var hd = document.getElementById(ah).innerHTML, lastChr = hd.substr(hd.length-1);
+      if (document.getElementById("txaStudentFirstName") != null) {
+        var vl = document.getElementById("txaStudentFirstName").value;
+        if ((!IsBlank(vl)) &&(hd.search(vl) > 0))
+          hd = hd.replace(" - "+vl, "");
+      }
+      if (wht != "") {
+        var rx = new RegExp("[0-9]"), cnt = countOcurrences(hd, /[0,1,2,3,4,5,6,7,8,9]/);
+        if ((cnt > 1) || (lastChr.search(/[0,1,2,3,4,5,6,7,8,9]/) < 0))
+          hd = hd.replace(rx, num)
+      }
+      else {
+        var rx = new RegExp("[0-9]", "g");
+        if (hd.search(/[0,1,2,3,4,5,6,7,8,9]/) > 0)
+          hd = hd.replace(rx, num)
+        else
+          hd = hd + " " + num;
+      }
+      return hd;
+    }
+    function AddNewMem() {
+      try {
+        if (memNum < orgMemNum)
+          memNum = orgMemNum;
+        memNum = memNum+1;
+        document.getElementById('btnDelMember').disabled = false;
+        var table = document.getElementById("mainTable");
+        var mainTableBody = document.getElementById("mainTbody");
+        var ne = 0;
+        var tr1 = document.createElement('tr');
+        tr1.setAttribute('name', 'tr1'+memNum);
+        tr1.setAttribute('id', 'tr1'+memNum);
+        tr1.setAttribute('style', 'visibility: collapse');
+        mainTableBody.appendChild(tr1);
+        formTabIndex = formTabIndex + 1;
+        var td1 = document.createElement('td');
+        tr1.appendChild(td1);
+        var td1 = document.createElement('td');
+        td1.setAttribute('id', 'td2'+memNum);
+        td1.setAttribute('colspan', '3');
+        tr1.appendChild(td1);
+        td1.innerHTML = '<input tabindex="35" type="radio" title="" name="rbtStudent'+memNum+'Enroll" id="rbtStudent'+memNum+'Enroll" value="0" class="rbtnstyle" onclick="EnrollClick(memNum)" tabindex="35" checked /><span class="lbl" id="enr'+memNum+'Lbl" > Enroll Student '+memNum+'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input tabindex="35" type="radio" title="" name="rbtStudent'+memNum+'Enroll" id="rbtStudent'+memNum+'DoNotEnroll" value="1" class="rbtnstyle" onclick="EnrollClick(memNum)" /><span class="lbl" id="enr'+memNum+'DoNotLbl" > Do Not Enroll Student '+memNum+'</span>';
+        var tr2 = document.createElement('tr');
+        tr2.setAttribute('name', 'tr2'+memNum);
+        tr2.setAttribute('id', 'tr2'+memNum);
+        mainTableBody.appendChild(tr2);
+        formTabIndex = formTabIndex + 1;
+        var td2 = document.createElement('td');
+        td2.setAttribute('id', 'td3'+memNum);
+        td2.setAttribute('colspan', '2');
+        tr2.appendChild(td2);
+        var s = GetHeading("stdn1", memNum, "", "");
+        td2.innerHTML = '<input type="button" name="btnStudent'+memNum+'Btn" id="btnStudent'+memNum+'Btn" title="Toggle Section" value="Hide" onclick="toggleStudent('+memNum+')" style="width:80px" class="btnstyle" />&nbsp;&nbsp;<span class="titlelbl">'+s+'</span>';
+        tr2.insertCell(1).innerHTML = "";
+        tr2.insertCell(2).innerHTML = '<td>'+
+          '<select style="visibility: hidden;" tabindex="'+formTabIndex+'" name="cboStudent'+memNum+'Type" id="cboStudent'+memNum+'Type" style="" title="Select a type in the pull down list" class="pulldownstyle" >'+
+          '<option value=""></option>'+
+          '<option value="0">Head of Household</option>'+
+          '<option value="1">Spouse</option>'+
+          '<option value="2">Adult</option>'+
+          '<option value="3">Young Adult</option>'+
+          '<option value="4" selected>Child</option>'+
+          '<option value="5">Other</option>'+
+          '</select>'+
+          '</td>';
+        var tr3 = document.createElement('tr');
+        tr3.setAttribute('name', 'tr3'+memNum);
+        tr3.setAttribute('id', 'tr3'+memNum);
+        mainTableBody.appendChild(tr3);
+        tr3.insertCell(0).innerHTML = '<td></td>';
+        tr3.insertCell(1).innerHTML = '<td></td>';
+        tr3.insertCell(2).innerHTML = '<td></td>';
+        tr3.insertCell(3).innerHTML = '<td></td>';
+        var tr4 = document.createElement('tr');
+        tr4.setAttribute('name', 'tr4'+memNum);
+        tr4.setAttribute('id', 'tr4'+memNum);
+        mainTableBody.appendChild(tr4);
+        formTabIndex = formTabIndex + 1;
+        tr4.insertCell(0).innerHTML = '<td><span class="reqlbl" >*</span><span class="lbl">First Name</span></td>';
+        tr4.insertCell(1).innerHTML = '<td><input tabindex="'+formTabIndex+'" maxlength="100" style="width:150px" title="Please enter first name here" name="txaStudent'+memNum+'FirstName" id="txaStudent'+memNum+'FirstName" class="textboxstyle" onblur="CalTotalFee()"/></td>';
+        formTabIndex = formTabIndex + 1;
+        tr4.insertCell(2).innerHTML = '<td><span class="reqlbl" >*</span><span class="lbl">Last Name</span></td>';
+        tr4.insertCell(3).innerHTML = '<td><input tabindex="'+formTabIndex+'" maxlength="100" style="width:150px" title="Please enter last name here" name="txaStudent'+memNum+'LastName" id="txaStudent'+memNum+'LastName" class="textboxstyle" /></td>';
+        var tr5 = document.createElement('tr');
+        tr5.setAttribute('name', 'tr5'+memNum);
+        tr5.setAttribute('id', 'tr5'+memNum);
+        mainTableBody.appendChild(tr5);
+        formTabIndex = formTabIndex + 1;
+        tr5.insertCell(0).innerHTML = '<td><span class="lbl">&nbsp;&nbsp;Middle Name</span></td>';
+        tr5.insertCell(1).innerHTML = '<td><input tabindex="'+formTabIndex+'" maxlength="100" style="" title="Please enter middle name here" name="txaStudent'+memNum+'MidName" id="txaStudent'+memNum+'MidName" class="textboxstyle" /></td>';
+        tr5.insertCell(2).innerHTML = '<td></td>';
+        tr5.insertCell(3).innerHTML = '<td></td>';
+        var tr6 = document.createElement('tr');
+        tr6.setAttribute('name', 'tr6'+memNum);
+        tr6.setAttribute('id', 'tr6'+memNum);
+        mainTableBody.appendChild(tr6);
+        tr6.insertCell(0).innerHTML = '<td></td>';
+        tr6.insertCell(1).innerHTML = '<td></td>';
+        tr6.insertCell(2).innerHTML = '<td></td>';
+        tr6.insertCell(3).innerHTML = '<td></td>';
+        var tr7 = document.createElement('tr');
+        tr7.setAttribute('name', 'tr7'+memNum);
+        tr7.setAttribute('id', 'tr7'+memNum);
+        mainTableBody.appendChild(tr7);
+        tr7.insertCell(0).innerHTML = '<td></td>';
+        tr7.insertCell(1).innerHTML = '<td></td>';
+        formTabIndex = formTabIndex + 1;
+        tr7.insertCell(2).innerHTML = '<td><span class="reqlbl" id="r0">*</span><span class="lbl">Birth Date</span></td>';
+        tr7.insertCell(3).innerHTML = '<td><input tabindex="'+formTabIndex+'" maxlength="10" style="width:85px" autocomplete="off" value="mm/dd/yyyy" title="Please select a birth date" name="dteStudent'+memNum+'Birthday" id="dteStudent'+memNum+'Birthday" onkeydown="onKeyPressed(event, this);" onFocus="this.select()" class="textboxstyle dateInput" onblur="StudentDOBBlur(\'dteStudent'+memNum+'Birthday\', \'\', '+memNum+')" onchange="checkDate(this.id)" onkeyup="DoKeyUp(this)" /></td>';
+        calendar.set('dteStudent'+memNum+'Birthday');
+        var tr8 = document.createElement('tr');
+        tr8.setAttribute('name', 'tr8'+memNum);
+        tr8.setAttribute('id', 'tr8'+memNum);
+        mainTableBody.appendChild(tr8);
+        formTabIndex = formTabIndex + 1;
+        tr8.insertCell(0).innerHTML = '<td><span class="reqlbl" id="r0">*</span><span class="lbl">Gender</span></td>';
+        tr8.insertCell(1).innerHTML = '<td>'+
+          '<select tabindex="'+formTabIndex+'" name="cboStudent'+memNum+'Gender" id="cboStudent'+memNum+'Gender" title="select a gender in the pull down list" style="width:80px" class="pulldownstyle" >'+
+          '<option value=""></option>'+
+          '<option value="1">Male</option>'+
+          '<option value="2">Female</option>'+
+          '</select>'+
+          '</td>';
+        formTabIndex = formTabIndex + 1;
+        tr8.insertCell(2).innerHTML = '<td><span class="reqlbl" id="r0">*</span><span class="lbl">2025-2026 School Grade</span></td>';
+        tr8.insertCell(3).innerHTML = '<td>'+
+          '<select tabindex="'+formTabIndex+'" name="cboStudent'+memNum+'Grade" id="cboStudent'+memNum+'Grade" title="select a fall 2025 grade in the pull down list" style="width:110px" class="pulldownstyle" onchange="StudentGradeChange(\'cboStudent'+memNum+'Grade\', '+memNum+', '+memNum+')" onclick="StudentGradeClick(\'cboStudent'+memNum+'Grade\', value)">'+
+          '<option value=""></option>'+
+		  '<option value="1">Pre-K</option>'+
+          '<option value="1">Kn</option>'+
+          '<option value="1">1</option>'+
+          '<option value="2">2</option>'+
+          '<option value="3">3</option>'+
+          '<option value="4">4</option>'+
+          '<option value="5">5</option>'+
+          '<option value="6">6</option>'+
+          '<option value="7">7</option>'+
+          '<option value="8">8</option>'+
+          '<option value="9">9</option>'+
+		  '<option value="10">10</option>'+
+          '<option value="11">11</option>'+
+          '<option value="12">12</option>'+
+          '</select>'+
+          '</td>';
+        var tr9 = document.createElement('tr');
+        tr9.setAttribute('name', 'tr9'+memNum);
+        tr9.setAttribute('id', 'tr9'+memNum);
+        mainTableBody.appendChild(tr9);
+        tr9.insertCell(0).innerHTML = '<td></td>';
+        tr9.insertCell(1).innerHTML = '<td></td>';
+        tr9.insertCell(2).innerHTML = '<td></td>';
+        tr9.insertCell(3).innerHTML = '<td></td>';
+        var tr10 = document.createElement('tr');
+        tr10.setAttribute('name', 'tr10'+memNum);
+        tr10.setAttribute('id', 'Student'+memNum+'ClsLbl');
+        mainTableBody.appendChild(tr10);
+        var td10 = document.createElement('td');
+        td10.setAttribute('id', 'td10'+memNum);
+        tr10.appendChild(td10);
+        td10.setAttribute('colspan', '2');
+        td10.innerHTML = '<span class="titlelbl">Class Choices</span>';
+        var tr11 = document.createElement('tr');
+        tr11.setAttribute('name', 'tr11'+memNum);
+        tr11.setAttribute('id', 'Student'+memNum+'ClsReq1');
+        mainTableBody.appendChild(tr11);
+        tr11.insertCell(0).innerHTML = '<td><span class="reqlbl" >*</span><span class="lbl">Class Priority</span></td>';
+        formTabIndex = formTabIndex + 1;
+        var td11 = document.createElement('td');
+        td11.setAttribute('id', 'td11'+memNum);
+        td11.setAttribute('colspan', '3');
+        tr11.appendChild(td11);
+        td11.innerHTML = 
+          '<select tabIndex="'+formTabIndex+'" name="cboClassOpt1Student'+memNum+'" id="cboClassOpt1Student'+memNum+'" style="" title="select a class in the pull down list" class="clspulldownstyle" onclick="GetCurrClassInfo(value, id, \'cboStudentGrade\', \'\')" onchange="CheckClassSize(value, id, \'\', \'cboStudent'+memNum+'Grade\', '+memNum+')">'+
+          '<option value="" selected></option>'+
+          '</select>';
+        var tr12 = document.createElement('tr');
+        tr12.setAttribute('name', 'tr12'+memNum);
+        tr12.setAttribute('id', 'Student'+memNum+'ClsReq2');
+        mainTableBody.appendChild(tr12);
+        tr12.insertCell(0).innerHTML = '<td>&nbsp;&nbsp;<span class="lbl">Class 2</span></td>';
+        formTabIndex = formTabIndex + 1;
+        var td12 = document.createElement('td');
+        td12.setAttribute('id', 'td12'+memNum);
+        td12.setAttribute('colspan', '3');
+        tr12.appendChild(td12);
+        td12.innerHTML = 
+          '<select tabIndex="'+formTabIndex+'" name="cboClassOpt2Student'+memNum+'" id="cboClassOpt2Student'+memNum+'" style="" title="select a class in the pull down list" class="clspulldownstyle" onclick="GetCurrClassInfo(value, id, \'cboStudent'+memNum+'Grade\', '+memNum+')" onchange="CheckClassSize(value, id, \'\', \'cboStudent'+memNum+'Grade\', '+memNum+')">'+
+          '<option value="" selected></option>'+
+          '</select>';
+        var tr13 = document.createElement('tr');
+        tr13.setAttribute('name', 'tr13'+memNum);
+        tr13.setAttribute('id', 'Student'+memNum+'ClsReq3');
+        mainTableBody.appendChild(tr13);
+        tr13.insertCell(0).innerHTML = '<td>&nbsp;&nbsp;<span class="lbl">Class 3</span></td>';
+        formTabIndex = formTabIndex + 1;
+        var td13 = document.createElement('td');
+        td13.setAttribute('id', 'td13'+memNum);
+        td13.setAttribute('colspan', '3');
+        tr13.appendChild(td13);
+        td13.innerHTML = 
+          '<select tabIndex="'+formTabIndex+'" name="cboClassOpt3Student'+memNum+'" id="cboClassOpt3Student'+memNum+'" style="" title="select a class in the pull down list" class="clspulldownstyle" onclick="GetCurrClassInfo(value, id, \'cboStudent'+memNum+'Grade\', '+memNum+')" onchange="CheckClassSize(value, id, \'\', \'cboStudent'+memNum+'Grade\', '+memNum+')">'+
+          '<option value="" selected></option>'+
+          '</select>';
+        var tr14 = document.createElement('tr');
+        tr14.setAttribute('name', 'tr14'+memNum);
+        tr14.setAttribute('id', 'Student'+memNum+'ClsReq4');
+        mainTableBody.appendChild(tr14);
+        tr14.insertCell(0).innerHTML = '<td>&nbsp;&nbsp;<span class="lbl">Class 4</span></td>';
+        formTabIndex = formTabIndex + 1;
+        var td14 = document.createElement('td');
+        td14.setAttribute('id', 'td14'+memNum);
+        td14.setAttribute('colspan', '3');
+        tr14.appendChild(td14);
+        td14.innerHTML = 
+          '<select tabIndex="'+formTabIndex+'" name="cboClassOpt4Student'+memNum+'" id="cboClassOpt4Student'+memNum+'" style="" title="select a class in the pull down list" class="clspulldownstyle" onclick="GetCurrClassInfo(value, id, \'cboStudent'+memNum+'Grade\', '+memNum+')" onchange="CheckClassSize(value, id, \'\', \'cboStudent'+memNum+'Grade\', '+memNum+')">'+
+          '<option value="" selected></option>'+
+          '</select>';
+        var tr15 = document.createElement('tr');
+        tr15.setAttribute('name', 'tr15'+memNum);
+        tr15.setAttribute('id', 'Student'+memNum+'ClsReq5');
+        mainTableBody.appendChild(tr15);
+        tr15.insertCell(0).innerHTML = '<td>&nbsp;&nbsp;<span class="lbl">Class 5</span></td>';
+        formTabIndex = formTabIndex + 1;
+        var td15 = document.createElement('td');
+        td15.setAttribute('id', 'td15'+memNum);
+        td15.setAttribute('colspan', '3');
+        tr15.appendChild(td15);
+        td15.innerHTML = 
+          '<select tabIndex="'+formTabIndex+'" name="cboClassOpt5Student'+memNum+'" id="cboClassOpt5Student'+memNum+'" style="" title="select a class in the pull down list" class="clspulldownstyle" onclick="GetCurrClassInfo(value, id, \'cboStudent'+memNum+'Grade\', '+memNum+')" onchange="CheckClassSize(value, id, \'\', \'cboStudent'+memNum+'Grade\', '+memNum+')">'+
+          '<option value="" selected></option>'+
+          '</select>';
+        var tr16 = document.createElement('tr');
+        tr16.setAttribute('name', 'tr16'+memNum);
+        tr16.setAttribute('id', 'Student'+memNum+'ClsReq6');
+        mainTableBody.appendChild(tr16);
+        tr16.insertCell(0).innerHTML = '<td>&nbsp;&nbsp;<span class="lbl">Class 6</span></td>';
+        formTabIndex = formTabIndex + 1;
+        var td16 = document.createElement('td');
+        td16.setAttribute('id', 'td16'+memNum);
+        td16.setAttribute('colspan', '3');
+        tr16.appendChild(td16);
+        td16.innerHTML = 
+          '<select tabIndex="'+formTabIndex+'" name="cboClassOpt6Student'+memNum+'" id="cboClassOpt6Student'+memNum+'" style="" title="select a class in the pull down list" class="clspulldownstyle" onclick="GetCurrClassInfo(value, id, \'cboStudent'+memNum+'Grade\', '+memNum+')" onchange="CheckClassSize(value, id, \'\', \'cboStudent'+memNum+'Grade\', '+memNum+')">'+
+          '<option value="" selected></option>'+
+          '</select>';
+        var tr17 = document.createElement('tr');
+        tr17.setAttribute('name', 'tr17'+memNum);
+        tr17.setAttribute('id', 'Student'+memNum+'ClsReq7');
+        mainTableBody.appendChild(tr17);
+        tr17.insertCell(0).innerHTML = '<td>&nbsp;&nbsp;<span class="lbl">Class 7</span></td>';
+        formTabIndex = formTabIndex + 1;
+        var td17 = document.createElement('td');
+        td17.setAttribute('id', 'td17'+memNum);
+        td17.setAttribute('colspan', '3');
+        tr17.appendChild(td17);
+        td17.innerHTML = 
+          '<select tabIndex="'+formTabIndex+'" name="cboClassOpt7Student'+memNum+'" id="cboClassOpt7Student'+memNum+'" style="" title="select a class in the pull down list" class="clspulldownstyle" onclick="GetCurrClassInfo(value, id, \'cboStudent'+memNum+'Grade\', '+memNum+')" onchange="CheckClassSize(value, id, \'\', \'cboStudent'+memNum+'Grade\', '+memNum+')">'+
+          '<option value="" selected></option>'+
+          '</select>';
+        var tr9999 = document.createElement('tr');
+        tr9999.setAttribute('name', 'tr9999'+memNum);
+        tr9999.setAttribute('id', 'tr9999'+memNum);
+        mainTableBody.appendChild(tr9999);
+        var td9999 = document.createElement('td');
+        td9999.setAttribute('id', 'td9999'+memNum);
+        td9999.setAttribute('colspan', '5');
+        tr9999.appendChild(td9999);
+        td9999.innerHTML = '<hr class="hrbet">';
+        for (var i=1; i<=ne; i++)
+          toggleEmer(memNum, i);
+        for (var i=0; i<clNum; i++) {
+          var cbo = document.getElementById("cboClassOpt"+(i+1)+"Student"+memNum);
+          if (cbo != null) {
+            for (var j=0; j<listCL.length; j++) {
+              if (listCL[j] != null) {
+                var elOptNew = document.createElement("option");
+                elOptNew.text = listCL[j].clE;
+                elOptNew.value = listCL[j].clR;
+                cbo.add(elOptNew);
+              };
+            }; //for
+          };
+        }; //for
+        BuildTabIndex();
+      }
+      catch(e) {
+        showmodal("", "Information", e);
+      }
+    }
+    function toggleStudent(num) {
+      var table = document.getElementById("mainTable");
+      if (table) {
+        var showInfo = 'showStudent'+num+'Info';
+        var StudentBtn = document.getElementById('btnStudent'+num+'Btn');
+        if ((table.className && table.className.indexOf(showInfo) !== -1) || (StudentBtn.value == "Hide")) {
+          table.className = table.className.replace(" " + showInfo, "");
+          table.className = table.className.replace(showInfo, "");
+          if (document.getElementById('cboStudent'+num+'Type') != null)
+            document.getElementById('cboStudent'+num+'Type').style.display = 'none';
+          if (document.getElementById('labelStudent'+num+'Type') != null)
+            document.getElementById('labelStudent'+num+'Type').style.display = 'none';
+          if (StudentBtn) {
+            StudentBtn.value = "Show";
+          }
+        }
+        else {
+          if (!table.className || "" == table.className)
+            table.className = showInfo
+          else
+            table.className += " " + showInfo;
+          if (StudentBtn) {
+            StudentBtn.value = "Hide";
+            if (document.getElementById('cboStudent'+num+'Type') != null)
+              document.getElementById('cboStudent'+num+'Type').style.display = 'inline';
+            if (document.getElementById('labelStudent'+num+'Type') != null)
+              document.getElementById('labelStudent'+num+'Type').style.display = 'inline';
+          }
+        }
+      }
+      if (StudentBtn.value == "Hide") {
+        document.getElementById('tr3'+num).style.display = '';
+        document.getElementById('tr4'+num).style.display = '';
+        document.getElementById('tr5'+num).style.display = '';
+        document.getElementById('tr6'+num).style.display = '';
+        document.getElementById('tr7'+num).style.display = '';
+        document.getElementById('tr8'+num).style.display = '';
+        document.getElementById('tr9'+num).style.display = '';
+        document.getElementById('Student'+memNum+'ClsLbl').style.display = '';
+        document.getElementById('Student'+memNum+'ClsReq1').style.display = '';
+        document.getElementById('Student'+memNum+'ClsReq2').style.display = '';
+        document.getElementById('Student'+memNum+'ClsReq3').style.display = '';
+        document.getElementById('Student'+memNum+'ClsReq4').style.display = '';
+        document.getElementById('Student'+memNum+'ClsReq5').style.display = '';
+        document.getElementById('Student'+memNum+'ClsReq6').style.display = '';
+        document.getElementById('Student'+memNum+'ClsReq7').style.display = '';
+        for (var i=1; i<emerNum+1; i++) {
+          document.getElementById("btnStu"+num+'Emergency'+i+"Btn").style.display = '';
+          document.getElementById("lblStu"+num+'Emergency'+i+"Lbl").style.display = '';
+        }
+      }
+      else {
+        document.getElementById('tr3'+num).style.display = 'none';
+        document.getElementById('tr4'+num).style.display = 'none';
+        document.getElementById('tr5'+num).style.display = 'none';
+        document.getElementById('tr6'+num).style.display = 'none';
+        document.getElementById('tr7'+num).style.display = 'none';
+        document.getElementById('tr8'+num).style.display = 'none';
+        document.getElementById('tr9'+num).style.display = 'none';
+        document.getElementById('Student'+memNum+'ClsLbl').style.display = 'none';
+        document.getElementById('Student'+memNum+'ClsReq1').style.display = 'none';
+        document.getElementById('Student'+memNum+'ClsReq2').style.display = 'none';
+        document.getElementById('Student'+memNum+'ClsReq3').style.display = 'none';
+        document.getElementById('Student'+memNum+'ClsReq4').style.display = 'none';
+        document.getElementById('Student'+memNum+'ClsReq5').style.display = 'none';
+        document.getElementById('Student'+memNum+'ClsReq6').style.display = 'none';
+        document.getElementById('Student'+memNum+'ClsReq7').style.display = 'none';
+        for (var i=1; i<emerNum+1; i++) {
+          document.getElementById("btnStu"+num+'Emergency'+i+"Btn").style.display = 'none';
+          document.getElementById("lblStu"+num+'Emergency'+i+"Lbl").style.display = 'none';
+        }
+      }
+        CheckPayVC();
+    }
+    function toggleEmer(num, en) {
+    }
+    function toggleSpouse() {
+      var table = document.getElementById("mainTable");
+      if (table) {
+        var showInfo = "showSpouseInfo";
+        var spouseBtn = document.getElementById("btnSpouseBtn");
+        if (table.className && table.className.indexOf(showInfo) !== -1) {
+          table.className = table.className.replace(" " + showInfo, "");
+          table.className = table.className.replace(showInfo, "");
+          if (spouseBtn)
+            spouseBtn.value = "Show";
+        }
+        else {
+          if (!table.className || "" == table.className)
+            table.className = showInfo
+          else
+            table.className += " " + showInfo;
+          if (spouseBtn)
+            spouseBtn.value = "Hide";
+        }
+      }
+    }
+    function toggleStudent1() {
+      var table = document.getElementById("mainTable");
+      if (table) {
+        var showInfo = "showStudent1Info";
+        var Student1Btn = document.getElementById("btnStudent1Btn");
+        if (table.className && table.className.indexOf(showInfo) !== -1) {
+          table.className = table.className.replace(" " + showInfo, "");
+          table.className = table.className.replace(showInfo, "");
+          document.getElementById("cboStudent1Type").style.display = 'none';
+          document.getElementById("labelStudent1Type").style.display = 'none';
+          if (Student1Btn) {
+            Student1Btn.value = "Show";
+          }
+        }
+        else {
+          if (!table.className || "" == table.className)
+            table.className = showInfo
+          else
+            table.className += " " + showInfo;
+          if (Student1Btn) {
+            Student1Btn.value = "Hide";
+            document.getElementById("cboStudent1Type").style.display = 'inline';
+            document.getElementById("labelStudent1Type").style.display = 'inline';
+          }
+        }
+      }
+    }
+    function IsValidEmail(str) {
+      return (str.indexOf(".") > 0) && (str.indexOf("@") > 0);
+    }
+    function IsNumeric(strString) { // check for valid numeric strings
+      var strValidChars = "0123456789.-";
+      var strChar;
+      var blnResult = true;
+      if (strString.length == 0) return false; // test strString consists of valid characters listed above
+      for (i = 0; i < strString.length &&  blnResult == true; i++) {
+        strChar = strString.charAt(i);
+        if (strValidChars.indexOf(strChar) == -1)
+          blnResult = false;
+      }
+      return blnResult;
+    }
+    function checkDate(e) {
+      var theForm = document.forms["FORegForm"];
+      if ((theForm.elements[e].value!='mm/dd/yyyy')&&
+          (!validateDate(theForm.elements[e].value))) {
+        clickOutSide();
+        showmodal(e, "Information", 'Please enter a date format as mm/dd/yyyy.');
+        theForm.elements[e].focus();
+      }
+    }
+    function validateDate(argDate) {
+      if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(argDate))
+        return false;
+      var parts = argDate.split("/");
+      var day = parseInt(parts[1], 10),
+          month = parseInt(parts[0], 10),
+          year = parseInt(parts[2], 10);
+      if (year < 1000 || year > 3000 || month == 0 || month > 12)
+        return false;
+      var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+      if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
+        monthLength[1] = 29;
+      return (day > 0 && day <= monthLength[month - 1]);
+    }
+    function RbtnChecked(argRbtn) {
+      var rbtnResult=true;
+      if (argRbtn.checked==false) {
+        rbtnResult=false;
+      }
+      return rbtnResult;
+    }
+    function ShowFeeReason() {
+        var s = "";
+        s = "<table>"+feeReason;
+        if (discReason != "")
+          s = s +"<tr><td><b>Discount:</b></dt><td></td></tr>"+discReason;
+        s = s + "<tr><td></td><td align='right'>=========</td></tr>\n";
+        s = s + "<tr><td><b>Fee Total:</b></dt><td align='right'><b> $"+(totalFee+totalDisc).toFixed(2)+"</b></td></tr>\n";
+        s = s + "</table><hr>";
+        document.getElementById('dispReasonLbl').innerHTML = s;
+        document.getElementById('whyDialog').showModal();
+    }
+    function CloseFeeReason() {
+        document.getElementById('whyDialog').close();
+    }
+    function CheckForm() {
+      if (errcaptcha == true) {
+        showmodal("", "Information", "Captcha service is not available.<br><br>Please contact your church.");
+        return false;
+      }
+      else if (errstr != "") {
+        showmodal("", "Information", errstr);
+        return false;
+      }
+      serverLocked = false;
+      clFull = false;
+      ajaxCall("CheckLock", "");
+      if ((serverLocked == false) && (clArray.length > 0)) {
+        for (var i=clArray.length-1; i>=0; i--) {
+          if (document.getElementById(clArray[i].clE) !== null)
+            CheckClassSize(clArray[i].clR, clArray[i].clE, "No need to check lock", "", "");
+          if (clFull)
+            break;
+        };
+      }
+      setTimeout(function() {
+        var okay = true;
+        if (serverLocked) {
+          showmodal("", "Information", "The online registration system is currently being updated.<br><br>Please try again later.");
+          okay = false;
+        }
+        else if (clFull) {
+          okay = false;
+        }
+        if ((document.FORegForm.txaHeadFirstName.value=='') && (okay == true)) {
+          showmodal('txaHeadFirstName', "Information", 'Please enter head of household first name.');
+          okay = false;
+          document.FORegForm.txaHeadFirstName.focus();
+        }
+        else if ((document.FORegForm.txaHeadLastName.value=='') && (okay == true)) {
+          showmodal('txaHeadLastName', "Information", 'Please enter head of household last name.');
+          okay = false;
+          document.FORegForm.txaHeadLastName.focus();
+        }
+        else if ((document.FORegForm.txaStreetAddress.value=='') && (okay == true)) {
+          showmodal('txaStreetAddress', "Information", 'Please enter the family street address.');
+          okay = false;
+          document.FORegForm.txaStreetAddress.focus();
+        }
+        else if ((document.FORegForm.txaStreetCity.value=='') && (okay == true)) {
+          showmodal('txaStreetCity', "Information", 'Please enter the family street city.');
+          okay = false;
+          document.FORegForm.txaStreetCity.focus();
+        }
+        else if ((document.FORegForm.cboStreetState.selectedIndex == 0) && (okay == true)) {
+          showmodal('cboStreetState', "Information", 'Please select family street STATE in the pull down list.');
+          okay = false;
+          document.FORegForm.cboStreetState.focus();
+        }
+        else if ((document.FORegForm.txaStreetZIP.value=='') && (okay == true)) {
+          showmodal('txaStreetZIP', "Information", 'Please enter the family street ZIP.');
+          okay = false;
+          document.FORegForm.txaStreetZIP.focus();
+        }
+        else if ((document.FORegForm.cbxAddrPhone1Unl.Checked) &&
+                 (document.FORegForm.txnAddrPhone1Num1.value=='')) {
+          showmodal("txnAddrPhone1Num1", "Information", 'Please enter the family phone area code.');
+          okay = false;
+          document.FORegForm.txnAddrPhone1Num1.focus();
+        }
+        else if ((document.FORegForm.cbxAddrPhone1Unl.Checked) &&
+                 (document.FORegForm.txnAddrPhone1Num2.value=='')) {
+          showmodal("txnAddrPhone1Num2", "Information", 'Please enter the family phone prefix.');
+          okay = false;
+          document.FORegForm.txnAddrPhone1Num2.focus();
+        }
+        else if ((document.FORegForm.cbxAddrPhone1Unl.Checked) &&
+                 (document.FORegForm.txnAddrPhone1Num3.value=='')) {
+          showmodal("txnAddrPhone1Num3", "Information", 'Please enter the family phone number.');
+          okay = false;
+          document.FORegForm.txnAddrPhone1Num3.focus();
+        }
+        else if ((document.FORegForm.txnAddrPhone1Num1.value=='') && (okay == true)) {
+          showmodal("txnAddrPhone1Num1", "Information", 'Please enter the family phone area code.');
+          okay = false;
+          document.FORegForm.txnAddrPhone1Num1.focus();
+        }
+        else if (!IsNumeric(document.FORegForm.txnAddrPhone1Num1.value)) {
+          showmodal("txnAddrPhone1Num1", "Information", 'Please enter number for the phone.');
+          okay = false;
+          document.FORegForm.txnAddrPhone1Num1.focus();
+        }
+        else if ((document.FORegForm.txnAddrPhone1Num2.value=='') && (okay == true)) {
+          showmodal("txnAddrPhone1Num2", "Information", 'Please enter the family phone prefix.');
+          okay = false;
+          document.FORegForm.txnAddrPhone1Num2.focus();
+        }
+        else if (!IsNumeric(document.FORegForm.txnAddrPhone1Num2.value)) {
+          showmodal("txnAddrPhone1Num2", "Information", 'Please enter number for phone.');
+          okay = false;
+          document.FORegForm.txnAddrPhone1Num2.focus();
+        }
+        else if ((document.FORegForm.txnAddrPhone1Num3.value=='') && (okay == true)) {
+          showmodal("txnAddrPhone1Num3", "Information", 'Please enter the family phone number.');
+          okay = false;
+          document.FORegForm.txnAddrPhone1Num3.focus();
+        }
+        else if (!IsNumeric(document.FORegForm.txnAddrPhone1Num3.value)) {
+          showmodal("txnAddrPhone1Num3", "Information", 'Please enter number for the phone.');
+          okay = false;
+          document.FORegForm.txnAddrPhone1Num3.focus();
+        }
+        else if (document.FORegForm.txaAddrEmail.value=='') {
+          showmodal("txaAddrEmail", "Information", 'Please enter the family email address.');
+          okay = false;
+          document.FORegForm.txaAddrEmail.focus();
+        }
+        else if ((document.FORegForm.txaAddrEmail.value=='') && (okay == true)) {
+          showmodal("txaAddrEmail", "Information", 'Please enter the family email address.');
+          okay = false;
+          document.FORegForm.txaAddrEmail.focus();
+        }
+        else if (!IsValidEmail(document.FORegForm.txaAddrEmail.value) && (okay == true)) {
+          showmodal("txaAddrEmail", "Information", 'Family email address is incorrect.');
+          okay = false;
+          document.FORegForm.txaAddrEmail.focus();
+        }
+        else if ((document.FORegForm.txaStudentFirstName.value=='') && (okay == true)) {
+          showmodal('txaStudentFirstName', "Information", 'Please enter student 1 first name.');
+          okay = false;
+          document.FORegForm.txaStudentFirstName.focus();
+        }
+        else if ((document.FORegForm.txaStudentLastName.value=='') && (okay == true)) {
+          showmodal('txaStudentLastName', "Information", 'Please enter student 1 last name.');
+          okay = false;
+          document.FORegForm.txaStudentLastName.focus();
+        }
+        else if ((document.FORegForm.dteStudentBirthday.value=='mm/dd/yyyy') || 
+         (document.FORegForm.dteStudentBirthday.value=='')) {
+          if (okay == true) {
+            var errorMessage = 'Please enter the birth date.';
+            showmodal('dteStudentBirthday', "Information", errorMessage);
+            okay=false;
+            document.FORegForm.dteStudentBirthday.focus();
+          }
+        }
+        else if ((document.FORegForm.txaStudentFirstName.value!='') && (document.FORegForm.dteStudentBirthday.value!='mm/dd/yyyy') &&
+                 (!validateDate(document.FORegForm.dteStudentBirthday.value))) {
+          if (okay == true) {
+            var errorMessage = 'Please enter birth date format as mm/dd/yyyy.';
+            showmodal('dteStudentBirthday', "Information", errorMessage);
+            okay=false;
+            document.FORegForm.dteStudentBirthday.focus();
+          }
+        }
+        else if ((document.FORegForm.cboStudentGrade.selectedIndex == 0) && (okay == true)) {
+          showmodal('cboStudentGrade', "Information", 'Please select student 1 fall 2025 grade in the pull down list.');
+          okay = false;
+          document.FORegForm.cboStudentGrade.focus();
+        }
+        else if ((document.FORegForm.cboClassOpt1Student.value=='') && (validateCL == true) && (okay == true) && 
+         (document.getElementById("rbtStudentEnroll") != null) && (document.getElementById("rbtStudentEnroll").checked)) {
+          showmodal('cboClassOpt1Student', "Information", 'Please select class choice 1.');
+          okay = false;
+          document.FORegForm.cboClassOpt1Student.focus();
+        }
+        else if ((document.FORegForm.cboClassOpt1Student != null) && (document.FORegForm.cboClassOpt1Student.selectedIndex == 0) && (validateCL == true) && (okay == true)) {
+          if ((document.getElementById("rbtStudent1Enroll") != null) && 
+              (document.getElementById("rbtStudent1Enroll").checked)) {
+            showmodal('cboClassOpt1Student', "Information", 'Please select a class choice 1 in the pull down list.');
+            okay = false;
+            document.FORegForm.cboClassOpt1Student.focus();
+          }
+        }
+        if (okay == true) {
+          for (var i=2; i<=memNum; i++) {
+            if ((document.getElementById('txaStudent'+i+'FirstName').value=='') && (okay == true)) {
+              showmodal('txaStudent'+i+'FirstName', "Information", 'Please enter student '+i+' first name.');
+              okay = false;
+              document.getElementById('txaStudent'+i+'FirstName').focus();
+            }
+            else if ((document.getElementById('txaStudent'+i+'FirstName').value=='') && (okay == true)) {
+              showmodal('txaStudent'+i+'LastName', "Information", 'Please enter student '+i+' last name.');
+              okay = false;
+              document.getElementById('txaStudent'+i+'LastName').focus();
+            }
+            else if ((document.getElementById('txaStudent'+i+'FirstName').value!='') && (okay == true) && 
+         (!validateDate(document.getElementById('dteStudent'+i+'Birthday').value))) {
+                var errorMessage = 'Please enter birth date format as mm/dd/yyyy.';
+                showmodal('dteStudent'+i+'Birthday', "Information", errorMessage);
+                okay=false;
+                document.getElementById('dteStudent'+i+'Birthday').focus();
+            }
+            else if ((document.getElementById('txaStudent'+i+'FirstName').value!='') && (document.getElementById('cboStudent'+i+'Grade').selectedIndex == 0) && (okay == true)) {
+              showmodal('cboStudent'+i+'Grade', "Information", 'Please select student '+i+' fall 2025 grade in the pull down list.');
+              okay = false;
+              document.getElementById('cboStudent'+i+'Grade').focus();
+            }
+            else if ((document.getElementById('cboClassOpt1Student'+i).value=='') && (validateCL == true) && (okay == true) && 
+         (document.getElementById("rbtStudent"+i+"Enroll") != null) && (document.getElementById("rbtStudent"+i+"Enroll").checked)) {
+              showmodal('cboClassOpt1Student'+i, "Information", 'Please select class choice 1.');
+              okay = false;
+              document.getElementById('cboClassOpt1Student'+i).focus();
+            }
+          } //for
+        }
+        if (okay == true) {
+          var ckvisible = document.getElementById("captsection").style.display;
+          if (ckvisible == "none") {
+            GetNewCaptcha();
+            document.getElementById("captsection").scrollIntoView();
+            document.getElementById("appCaptcha").focus();
+            okay = false;
+          }
+        }
+        if ((okay == true) && (ckvisible == "block") && (document.getElementById("appCaptcha").value=="")) {
+          document.getElementById("captsection").scrollIntoView();
+          showmodal("appCaptcha", "Information", "Please enter the characters.");
+          okay = false;
+        }
+        else if ((okay == true) && (ckvisible == "block") && (document.getElementById("appCaptcha").value!="")) {
+          var clen = document.getElementById("appCaptcha").value;
+          if ((clen.length < 3) || (clen.length > 5)) {
+            document.getElementById("captsection").scrollIntoView();
+            showmodal("appCaptcha", "Information", "Please enter the same characters.");
+            okay = false;
+          }
+        else okay = true;
+        }
+        if (okay == true)
+          showmodal("", "Confirmation", "Are you ready to submit the form?");
+        return okay;
+      }, 600);
+    }
+    function SelectVCAcct(idx) {
+    }
+    function autoTab(current,next) {
+      if (current.getAttribute&&current.value.length==current.getAttribute("maxlength")) next.focus();
+    }
+    function onKeyPressed(evt, input) {
+      var code = evt.charCode || evt.keyCode,
+          v = document.getElementById(input.id).value;
+      if ((code == 27) || (code == 9) || (code == 13) || (validateDate(v))) {
+        if (v != "mm/dd/yyyy")
+          checkDate(input.id)
+        clickOutSide();
+        return false;
+      }
+      else if (v === "mm/dd/yyyy") {
+        return false;
+      }
+    }
+    function clickOutSide() {
+      if ((calendar !== null) && (calendarActiveInstance !== null)) {
+        var ths = calendarActiveInstance;
+        if (ths.hasOwnProperty("hideCalendar"))
+          ths.hideCalendar();
+      }
+    }
+    function documentClick(e) {
+      if (document.calendarClicked)
+        document.calendarClicked = false;
+      else
+        clickOutSide();
+    }
+    function IsBlank(str) {
+      return (!str || /^\s*$/.test(str));
+    }
+    var calendar = {
+      month_names: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+      weekdays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      month_days: [31,28,31,30,31,30,31,31,30,31,30,31],
+      today : new Date(),
+      opt : {},
+      data: [],
+      wrt:function(txt) {
+      this.data.push(txt);
+    },
+    getStyle: function(ele, property) {
+      if (ele.currentStyle) {
+        var alt_property_name = property.replace(/\-(\w)/g,function(m,c){return c.toUpperCase();});//background-color becomes backgroundColor
+        var value = ele.currentStyle[property]||ele.currentStyle[alt_property_name];
+      }
+      else if (window.getComputedStyle) {
+        property = property.replace(/([A-Z])/g,"-$1").toLowerCase();//backgroundColor becomes background-color
+        var value = document.defaultView.getComputedStyle(ele,null).getPropertyValue(property);
+      }
+      if(property == "opacity" && ele.filter) value = (parseFloat( ele.filter.match(/opacity\=([^)]*)/)[1] ) / 100);
+      else if(property == "width" && isNaN(value)) value = ele.clientWidth || ele.offsetWidth;
+      else if(property == "height" && isNaN(value)) value = ele.clientHeight || ele.offsetHeight;
+      return value;
+    },
+    getPosition:function(ele) {
+      var x = 0;
+      var y = 0;
+      while (ele) {
+        x += ele.offsetLeft;
+        y += ele.offsetTop;
+        ele = ele.offsetParent;
+      } //while
+      if (navigator.userAgent.indexOf("Mac") != -1 && typeof document.body.leftMargin != "undefined") {
+        x += document.body.leftMargin;
+        offsetTop += document.body.topMargin;
+      }
+      var xy = new Array(x,y);
+      return xy;
+    },
+    selectDate:function(year,month,day) {
+      var ths = calendarActiveInstance;
+      document.getElementById(ths.opt["input"]).value = month + "/" + day + "/" + year; // Date format is :HARDCODE:
+      ths.hideCalendar();
+    },
+    makeCalendar:function(year, month, day) {
+      year = parseInt(year);
+      month = parseInt(month);
+      day = parseInt(day);
+      var next_month = month+1;
+      var next_month_year = year;
+      if(next_month>=12) {
+        next_month = 0;
+        next_month_year++;
+      }
+      var previous_month = month-1;
+      var previous_month_year = year;
+      if(previous_month< 0) {
+        previous_month = 11;
+        previous_month_year--;
+      }
+      this.wrt("<table>");
+      this.wrt("<tr><th><a href='javascript:calendar.makeCalendar("+(previous_month_year)+","+(previous_month)+");' title='"+this.month_names[previous_month]+" "+(previous_month_year)+"'>&lt;</a></th>");
+      this.wrt("<th colspan='5' class='calendar-title'><select name='calendar-month' class='calendar-month' onChange='calendar.makeCalendar("+year+",this.value);'>");
+      for(var i in this.month_names) {
+        this.wrt("<option background='#FEFCFF' value='"+i+"'");
+        if(i == month) this.wrt(" selected='selected'");
+          this.wrt(">"+this.month_names[i]+"</option>");
+      }
+      this.wrt("</select>");
+      this.wrt("<select background='#FEFCFF' name='calendar-year' class='calendar-year' onChange='calendar.makeCalendar(this.value, "+month+");'>");
+      var current_year = this.today.getYear();
+      if(current_year < 1900) current_year += 1900;
+      for(var i=1899; i<current_year+300; i++) {
+        this.wrt("<option value='"+i+"'")
+        if(i == year) this.wrt(" selected='selected'");
+        this.wrt(">"+i+"</option>");
+      }
+      this.wrt("</select></th>");
+      this.wrt("<th><a href='javascript:calendar.makeCalendar("+(next_month_year)+","+(next_month)+");' title='"+this.month_names[next_month]+" "+(next_month_year)+"'>&gt;</a></th></tr>");
+      this.wrt("<tr class='header'>");
+      for(var weekday=0; weekday<7; weekday++) this.wrt("<td>"+this.weekdays[weekday]+"</td>");
+      this.wrt("</tr>");
+      var first_day = new Date(year,month,1);
+      var start_day = first_day.getDay();
+      var d = 1;
+      var flag = 0;
+      if(year % 4 == 0) this.month_days[1] = 29;
+      else this.month_days[1] = 28;
+      var days_in_this_month = this.month_days[month];
+      for(var i=0;i<=5;i++) {
+        if(w >= days_in_this_month) break;
+        this.wrt("<tr>");
+        for(var j=0;j<7;j++) {
+          if(d > days_in_this_month) flag=0; //If the days has overshooted the number of days in this month, stop writing
+          else if(j >= start_day && !flag) flag=1;//If the first day of this month has come, start the date writing
+          if(flag) {
+            var w = d, mon = month+1;
+            if(w < 10)  w  = "0" + w;
+            if(mon < 10)mon = "0" + mon;
+            var class_name = "";
+            var yea = this.today.getYear();
+            if(yea < 1900) yea += 1900;
+            if(yea == year && this.today.getMonth() == month && this.today.getDate() == d) class_name = " today";
+            if(day == d) class_name += " selected";
+            class_name += " " + this.weekdays[j].toLowerCase();
+            this.wrt("<td class='days"+class_name+"'><a href='javascript:calendar.selectDate(\""+year+"\",\""+mon+"\",\""+w+"\")'>"+w+"</a></td>");
+            d++;
+          }
+          else {
+            this.wrt("<td class='days'>&nbsp;</td>");
+          }
+        }
+        this.wrt("</tr>");
+      }
+      this.wrt("</table>");
+      this.wrt("<table>");
+      this.wrt("  <tr>");
+      this.wrt("    <td>");
+      this.wrt("      <input type='button' value='Clear' class='calendar-cancel btnstyle' onclick='calendar.clearCalValue();' />");
+      this.wrt("    </td>");
+      this.wrt("    <td>");
+      this.wrt("      <input type='button' value='Close' class='calendar-cancel btnstyle' onclick='calendar.hideCalendar();' />");
+      this.wrt("    </td>");
+      this.wrt("  </tr>");
+      this.wrt("</table>");
+      document.getElementById(this.opt['calendar']).innerHTML = this.data.join("");
+      this.data = [];
+    },
+    showCalendar: function() {
+      var input = document.getElementById(this.opt['input']);
+      var div = document.getElementById(this.opt['calendar']);
+      var xy = this.getPosition(input);
+      var width = parseInt(this.getStyle(input,'width'));
+      div.style.left=(xy[0]+width+10)+"px";
+      div.style.top=xy[1]+"px";
+      if ((input.value!='mm/dd/yyyy')&&
+          (validateDate(input.value))) {
+        var existing_date = new Date(input.value);
+      }
+      else {
+        var existing_date = new Date();
+      }
+      var date_in_input = input.value;
+      if(date_in_input) {
+        var selected_date = false;
+      var date_parts = date_in_input.split("-");
+      if(date_parts.length == 3) {
+        date_parts[1]--; //Month starts with 0
+        selected_date = new Date(date_parts[0], date_parts[1], date_parts[2]);
+      }
+      if(selected_date && !isNaN(selected_date.getYear()))
+        existing_date = selected_date;
+      }
+      var the_year = existing_date.getYear();
+      if(the_year < 1900) the_year += 1900;
+      this.makeCalendar(the_year, existing_date.getMonth(), existing_date.getDate());
+      document.getElementById(this.opt['calendar']).style.display = "block";
+      calendarActiveInstance = this;
+    },
+    hideCalendar: function(instance) {
+      var active_calendar_id = "";
+      if(instance) active_calendar_id = instance.opt['calendar'];
+      else active_calendar_id = calendarActiveInstance.opt['calendar'];
+      if(active_calendar_id) document.getElementById(active_calendar_id).style.display = "none";
+      calendarActiveInstance = {};
+      document.getElementById(this.opt['input']).focus();
+    },
+    clearCalValue: function(instance) {
+      var active_calendar_id = "";
+      if(instance) active_calendar_id = instance.opt['calendar'];
+      else active_calendar_id = calendarActiveInstance.opt['calendar'];
+      if(active_calendar_id) document.getElementById(active_calendar_id).style.display = "none";
+      calendarActiveInstance = {};
+      document.getElementById(this.opt['input']).value = "mm/dd/yyyy";
+      document.getElementById(this.opt['input']).focus();
+    },
+    set: function(input_id) {
+      var input = document.getElementById(input_id);
+      if(!input) return; //If the input field is not there, exit.
+      if(!this.opt['calendar']) this.init();
+      var ths = this;
+      input.onclick=function() {
+        document.calendarClicked = true;
+        ths.opt['input'] = this.id;
+        ths.showCalendar();
+      },
+      input.onkeypress=function(e) {
+        var code = e.charCode || e.keyCode;
+        if ((code == 27) || (code == 9) || (code == 13)) {
+          return false;
+        }
+      };
+    },
+    init: function() {
+      if(!this.opt['calendar'] || !document.getElementById(this.opt['calendar'])) {
+        var div = document.createElement('div');
+        if(!this.opt['calendar']) this.opt['calendar'] = 'calender_div_'+ Math.round(Math.random() * 100);
+          div.setAttribute('id',this.opt['calendar']);
+          div.className="calendar-box";
+          document.getElementsByTagName("body")[0].insertBefore(div,document.getElementsByTagName("body")[0].firstChild);
+          div.onclick = function(e) {
+            document.calendarClicked = true;
+          };
+        }
+      }
+    }
+  </script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"> </script>
+  </div>
+  <div id="downloadInstead">
+    <p style="padding: 100px 0px 50px 0px; margin: 0 auto; text-align: center; color: red; font-weight: bold; text-transform: uppercase;">This form won\'t display correctly without the JavaScript file. Please check with your church.</p><p style="margin: 0 auto; text-align: center; color: darkblue; font-weight: bold;">St. Mary Catholic Church</p>
+  </div>
+</body>
+</html>
